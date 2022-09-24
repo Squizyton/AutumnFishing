@@ -15,7 +15,7 @@ MonoBehaviour:
   version: 6
 --- !u!21 &2100000
 Material:
-  serializedVersion: 7
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23,16 +23,18 @@ Material:
   m_Name: NatureScene_BillboardBush_01 5-Tree
   m_Shader: {fileID: -6465566751694194690, guid: 28375c8afd8fa4900b90e1d5a4b6d88c,
     type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ShaderKeywords: BILLBOARD_ROTATION_WHOLE_OBJECT _FRESNEL _USE_FILL_TEXTURE _WIND
+  m_ValidKeywords:
+  - BILLBOARD_ROTATION_WHOLE_OBJECT
+  - _FRESNEL
+  - _USE_FILL_TEXTURE
+  - _WIND
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -189,7 +191,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Fresnel_Color: {r: 0.68396217, g: 1, b: 0.8415377, a: 0.078431375}
+    - Fresnel_Color: {r: 0.7264151, g: 0.546766, b: 0.058250275, a: 0.078431375}
     - Wind_Direction: {r: 1, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -209,7 +211,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__ShadingGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":0.07128870487213135,"g":0.16981130838394166,"b":0.08976169675588608,"a":1.0},"time":0.2852979302406311},{"color":{"r":0.33463868498802187,"g":0.6037735939025879,"b":0.3047347962856293,"a":1.0},"time":0.5686274766921997},{"color":{"r":0.5168662667274475,"g":0.7452830076217651,"b":0.3550640642642975,"a":1.0},"time":0.7176470756530762},{"color":{"r":0.6952652335166931,"g":0.8773584961891174,"b":0.5669722557067871,"a":1.0},"time":0.8029450178146362}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z__ShadingGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":0.7019608020782471,"b":0.40000003576278689,"a":1.0},"time":0.2852979302406311},{"color":{"r":1.0,"g":0.35686275362968447,"b":0.30980393290519717,"a":1.0},"time":0.5686274766921997},{"color":{"r":0.2641509175300598,"g":0.13284122943878175,"b":0.07600568234920502,"a":1.0},"time":0.7176470756530762},{"color":{"r":1.0,"g":0.7019608020782471,"b":0.40000003576278689,"a":1.0},"time":0.8029450178146362}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -244,7 +246,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122b17ff122c17ff132d18ff142f19ff153019ff16321aff17331bff18351cff19361cff1a381dff1b391eff1c3b1fff1d3d1fff1e3e20ff1e4021ff1f4122ff204322ff214423ff224624ff234725ff244925ff254a26ff264c27ff274d28ff284f29ff295029ff2a522aff2b542bff2c552cff2c572cff2d582dff2e5a2eff2f5b2fff305d2fff315e30ff326031ff336132ff346332ff356433ff366634ff376735ff386935ff396a36ff396c37ff3a6e38ff3b6f38ff3c7139ff3d723aff3e743bff3f753bff40773cff41783dff427a3eff437b3fff447d3fff457e40ff468041ff468142ff478342ff488543ff498644ff4a8845ff4b8945ff4c8b46ff4d8c47ff4e8e48ff4f8f48ff509149ff51924aff52944bff53954bff53974cff54984dff559a4eff579b4eff589c4eff599d4fff5a9e4fff5b9f4fff5da050ff5ea150ff5fa250ff60a351ff62a351ff63a451ff64a552ff65a652ff66a752ff68a853ff69a953ff6aaa53ff6bab54ff6dac54ff6ead54ff6fae55ff70af55ff71b055ff73b156ff74b256ff75b356ff76b457ff78b557ff79b658ff7ab658ff7bb758ff7cb859ff7eb959ff7fba59ff80bb5aff81bc5aff83bd5aff84be5bff86c05dff88c160ff8ac362ff8cc464ff8ec667ff90c769ff92c96cff95ca6eff97cc71ff99ce73ff9bcf76ff9dd178ff9fd27bffa1d47dffa3d580ffa5d782ffa7d885ffa9da87ffacdb8affaedd8cffb0df8fffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091ffb1e091
+  _typelessdata: ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb166ffffb065ffffaf65ffffae65ffffad64ffffab64ffffaa64ffffa963ffffa863ffffa763ffffa562ffffa462ffffa362ffffa261ffffa061ffff9f61ffff9e61ffff9d60ffff9c60ffff9a60ffff995fffff985fffff975fffff955effff945effff935effff925dffff915dffff8f5dffff8e5cffff8d5cffff8c5cffff8b5bffff895bffff885bffff875affff865affff845affff835affff8259ffff8159ffff8059ffff7e58ffff7d58ffff7c58ffff7b57ffff7957ffff7857ffff7756ffff7656ffff7556ffff7355ffff7255ffff7155ffff7054ffff6e54ffff6d54ffff6c53ffff6b53ffff6a53ffff6853ffff6752ffff6652ffff6552ffff6451ffff6251ffff6151ffff6050ffff5f50ffff5d50ffff5c4fffff5b4ffffa594dfff5584cfff0564affeb5549ffe65347ffe15246ffdc5044ffd74f42ffd34d41ffce4c3fffc94a3effc4493cffbf473bffba4639ffb54437ffb04336ffab4134ffa64033ffa13e31ff9c3d30ff973b2eff923a2cff8d382bff883729ff843528ff7f3426ff7a3225ff753123ff702f22ff6b2e20ff662c1eff612b1dff5c291bff57281aff522618ff4d2517ff482315ff432213ff4c2917ff552f1bff5d361fff663d23ff6e4326ff774a2aff80512eff885732ff915e36ff9a6539ffa26b3dffab7241ffb47945ffbc7f49ffc5864cffcd8d50ffd69354ffdf9a58ffe7a15cfff0a75ffff9ae63ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366ffffb366
   m_StreamData:
     serializedVersion: 2
     offset: 0
