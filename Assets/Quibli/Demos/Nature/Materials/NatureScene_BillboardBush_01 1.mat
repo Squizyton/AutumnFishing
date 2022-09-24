@@ -15,7 +15,7 @@ MonoBehaviour:
   version: 6
 --- !u!21 &2100000
 Material:
-  serializedVersion: 7
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23,16 +23,18 @@ Material:
   m_Name: NatureScene_BillboardBush_01 1
   m_Shader: {fileID: -6465566751694194690, guid: 28375c8afd8fa4900b90e1d5a4b6d88c,
     type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ShaderKeywords: BILLBOARD_ROTATION_WHOLE_OBJECT _FRESNEL _USE_FILL_TEXTURE _WIND
+  m_ValidKeywords:
+  - BILLBOARD_ROTATION_WHOLE_OBJECT
+  - _FRESNEL
+  - _USE_FILL_TEXTURE
+  - _WIND
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -209,7 +211,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__ShadingGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":0.1420879364013672,"g":0.2924528121948242,"b":0.16582977771759034,"a":1.0},"time":0.3205920457839966},{"color":{"r":0.27387452125549319,"g":0.41109251976013186,"b":0.19292204082012177,"a":1.0},"time":0.3676508665084839},{"color":{"r":0.39444494247436526,"g":0.5196349620819092,"b":0.2177085131406784,"a":1.0},"time":0.5911802649497986},{"color":{"r":0.5580263137817383,"g":0.6699739694595337,"b":0.27394384145736697,"a":1.0},"time":0.6470588445663452},{"color":{"r":0.7734131217002869,"g":0.8679245114326477,"b":0.3479886054992676,"a":1.0},"time":0.9058823585510254}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z__ShadingGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":0.5283018946647644,"g":0.3220926821231842,"b":0.0,"a":1.0},"time":0.3205920457839966},{"color":{"r":0.7735849022865295,"g":0.7345555424690247,"b":0.018244924023747445,"a":1.0},"time":0.3676508665084839},{"color":{"r":0.39444494247436526,"g":0.5196349620819092,"b":0.2177085131406784,"a":1.0},"time":0.5911802649497986},{"color":{"r":0.5580263137817383,"g":0.6699739694595337,"b":0.27394384145736697,"a":1.0},"time":0.6470588445663452},{"color":{"r":0.9433962106704712,"g":0.7043412327766419,"b":0.0,"a":1.0},"time":0.9058823585510254}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -244,7 +246,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: ff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff244b2aff254b2aff284e2bff2b502cff2d532cff30552dff33582dff365a2eff395d2eff3b5f2fff3e6230ff416430ff446731ff466931ff476931ff476a31ff486a32ff486b32ff496b32ff496c32ff4a6c32ff4a6d32ff4b6d32ff4b6e32ff4c6e32ff4c6f33ff4d6f33ff4e7033ff4e7033ff4f7133ff4f7133ff507233ff507233ff517333ff517334ff527434ff527434ff537534ff537534ff547634ff557634ff557734ff567734ff567835ff577835ff577835ff587935ff587935ff597a35ff597a35ff5a7b35ff5a7b35ff5b7c36ff5c7c36ff5c7d36ff5d7d36ff5d7e36ff5e7e36ff5e7f36ff5f7f36ff5f8036ff608037ff608137ff618137ff618237ff628237ff638337ff638337ff648437ff648437ff658538ff688839ff6b8b3aff6e8d3bff71903cff74933dff77953eff7a983fff7d9b40ff809d41ff83a042ff86a343ff88a544ff8ba845ff8eab46ff8fac46ff90ac46ff91ad47ff92ae47ff92af47ff93af48ff94b048ff95b148ff96b248ff97b249ff97b349ff98b449ff99b54aff9ab64aff9bb64aff9cb74aff9cb84bff9db94bff9eb94bff9fba4cffa0bb4cffa1bc4cffa1bc4cffa2bd4dffa3be4dffa4bf4dffa5bf4effa6c04effa6c14effa7c24effa8c34fffa9c34fffaac44fffabc550ffabc650ffacc650ffadc750ffaec851ffafc951ffb0c951ffb0ca52ffb1cb52ffb2cc52ffb3cc52ffb4cd53ffb5ce53ffb5cf53ffb6d054ffb7d054ffb8d154ffb9d254ffbad355ffbad355ffbbd455ffbcd556ffbdd656ffbed656ffbfd756ffbfd857ffc0d957ffc1d957ffc2da58ffc3db58ffc4dc58ffc4dd58ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59ffc5dd59
+  _typelessdata: ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff875200ff885400ff8d5d00ff926601ff986f01ff9d7702ffa28002ffa78902ffad9203ffb29a03ffb7a304ffbcac04ffc1b504ffc5bb05ffc3ba06ffc1b907ffc0b808ffbeb708ffbcb609ffbbb50affb9b40bffb7b30cffb6b20dffb4b10effb2b00fffb0b010ffafaf10ffadae11ffabad12ffaaac13ffa8ab14ffa6aa15ffa5a916ffa3a817ffa1a718ffa0a619ff9ea519ff9ca41aff9aa31bff99a21cff97a11dff95a01eff949f1fff929e20ff909d21ff8f9c21ff8d9b22ff8b9a23ff899924ff889825ff869726ff849727ff839628ff819529ff7f9429ff7e932aff7c922bff7a912cff79902dff778f2eff758e2fff738d30ff728c31ff708b31ff6e8a32ff6d8933ff6b8834ff698735ff688636ff668537ff658538ff688839ff6b8b3aff6e8d3bff71903cff74933dff77953eff7a983fff7d9b40ff809d41ff83a042ff86a343ff88a544ff8ba845ff8eab46ff90ab45ff91ab44ff93ab43ff94ab42ff96ac41ff97ac40ff99ac3eff9aac3dff9cac3cff9dac3bff9fac3affa0ac39ffa2ad38ffa3ad37ffa5ad36ffa6ad35ffa8ad34ffa9ad33ffabad32ffacad31ffaeae30ffafae2fffb1ae2effb2ae2cffb4ae2bffb5ae2affb6ae29ffb8af28ffb9af27ffbbaf26ffbcaf25ffbeaf24ffbfaf23ffc1af22ffc2af21ffc4b020ffc5b01fffc7b01effc8b01dffcab01cffcbb01affcdb019ffceb118ffd0b117ffd1b116ffd3b115ffd4b114ffd6b113ffd7b112ffd9b111ffdab210ffdcb20fffddb20effdfb20dffe0b20cffe2b20bffe3b20affe5b308ffe6b307ffe8b306ffe9b305ffebb304ffecb303ffeeb302ffefb301fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400fff1b400
   m_StreamData:
     serializedVersion: 2
     offset: 0
