@@ -23,7 +23,7 @@ namespace UI
     
         public void SetFishingSliderActive(bool value)
         {
-            fishingCanvasGroup.alpha = value ? .35f : 0;
+            fishingCanvasGroup.alpha = value ? .45f : 0;
         }
     }
 }

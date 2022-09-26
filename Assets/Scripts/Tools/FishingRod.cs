@@ -3,6 +3,7 @@ using System.Collections;
 using Sirenix.OdinInspector;
 using Tools;
 using UI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace ItemActions
@@ -24,8 +25,7 @@ namespace ItemActions
 
         public override void OnLeftClick()
         {
-            UIManager.Instance.SetFishingSliderActive(true);
-        
+
             if (!castedOut)
             {
                 if (!isCharging)
@@ -38,6 +38,15 @@ namespace ItemActions
                 //Cast the line back in
               CastIn();
             }
+        }
+
+
+        public void Update()
+        {
+            if (!isCharging) return;
+            
+            if(Input.GetMouseButton(0))
+                ChargeUp();
         }
 
         public override void OnLetGo()
@@ -54,19 +63,18 @@ namespace ItemActions
 
         private IEnumerator StartChargingCooldown()
         {
+            chargeTime = 0;
+            UIManager.Instance.UpdateFishingSlider(0);
+            UIManager.Instance.SetFishingSliderActive(true);
             yield return new WaitForSeconds(.5f);
             isCharging = true;
-            ChargeUp();   
         }
 
         private void ChargeUp()
         {
-            while (isCharging)
-            {
-                Debug.Log("Charging");
-                chargeTime += Time.deltaTime;
-                UIManager.Instance.UpdateFishingSlider(chargeTime / maxChargeTime);
-            }
+            Debug.Log("Charging");
+            chargeTime += Time.deltaTime * .35f;
+            UIManager.Instance.UpdateFishingSlider(chargeTime);
         }
 
         public void CastOut()
