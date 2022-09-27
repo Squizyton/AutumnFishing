@@ -11,21 +11,32 @@ namespace ItemActions
     public class FishingRod : Tool
     {
         [Title("Charge Variables")] private float chargeTime = 0;
-        private float maxChargeTime = 2;
-
-
+        private float _maxChargeTime = 2;
         public bool castedOut = false;
         public bool isCharging = false;
 
 
+        [Title("Fishing Variables")] [SerializeField]
+        private Animator fishingRodAnimator;
+
+        [SerializeField] private GameObject bauble;
+
+        [SerializeField] private Transform baubleSpawnPoint;
+
+        [SerializeField] private Rigidbody baubleRb;
+        [SerializeField] private float baseForce = 10;
+
+
+        [Title("Line Renderer")] [SerializeField]
+        private LineRenderer lineRenderer;
+
         private void Start()
         {
-            UIManager.Instance.SetMaxFishingSlider(maxChargeTime);
+            UIManager.Instance.SetMaxFishingSlider(_maxChargeTime);
         }
 
         public override void OnLeftClick()
         {
-
             if (!castedOut)
             {
                 if (!isCharging)
@@ -36,28 +47,35 @@ namespace ItemActions
             else
             {
                 //Cast the line back in
-              CastIn();
+                //TODO: Add a cast back in animation/Make it better
+                fishingRodAnimator.SetTrigger("castin");
             }
         }
 
 
         public void Update()
         {
-            if (!isCharging) return;
-            
-            if(Input.GetMouseButton(0))
-                ChargeUp();
+            if (isCharging)
+            {
+                if (Input.GetMouseButton(0))
+                    ChargeUp();
+            }
+
+            if (castedOut)
+            {
+                //lineRenderer.SetPosition(1, baubleSpawnPoint.position);
+            }
         }
+
 
         public override void OnLetGo()
         {
-         if(isCharging)
-             CastOut();
+            if (isCharging)
+                fishingRodAnimator.SetTrigger("castout");
         }
 
         public override void OnRightClick()
         {
-            throw new System.NotImplementedException();
         }
 
 
@@ -73,22 +91,39 @@ namespace ItemActions
         private void ChargeUp()
         {
             Debug.Log("Charging");
-            chargeTime += Time.deltaTime * .35f;
+            chargeTime += Time.deltaTime * .55f;
+
+            if (chargeTime > _maxChargeTime)
+            {
+                Debug.Log("Max Charge");
+                chargeTime = _maxChargeTime;
+            }
+
             UIManager.Instance.UpdateFishingSlider(chargeTime);
         }
 
-        public void CastOut()
+        private void CastOut()
         {
+            //TODO: Maybe add a trajectory line
             Debug.Log("Cast Out");
             UIManager.Instance.SetFishingSliderActive(false);
             castedOut = true;
             isCharging = false;
+            bauble.transform.SetParent(null);
+            baubleRb.isKinematic = false;
+            //TODO: Switch camera.main to a cached camera
+            baubleRb.AddForce(Camera.main.transform.forward * (baseForce * chargeTime), ForceMode.Impulse);
         }
-    
+
         private void CastIn()
         {
+            bauble.transform.SetParent(baubleSpawnPoint);
             castedOut = false;
-            Debug.Log("cast back in");
+            //TODO: Add lerp the bauble back to the player
+            baubleRb.isKinematic = true;
+            baubleRb.velocity = Vector3.zero;
+            
+            bauble.transform.position =bauble.transform.parent.position;
         }
     }
 }
