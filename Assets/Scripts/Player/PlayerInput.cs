@@ -43,6 +43,10 @@ public class PlayerInput : MonoBehaviour
             if (pickup)
                 UIManager.Instance.SetCrosshair(pickupSprite, .3f);
 
+            
+            if(Input.GetKeyDown(KeyCode.F))
+                pickup.OnPickup();
+            
         }else
         {
             UIManager.Instance.SetCrosshair(null,.1f);

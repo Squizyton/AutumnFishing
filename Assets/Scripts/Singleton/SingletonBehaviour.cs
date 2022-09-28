@@ -1,8 +1,9 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Singleton
 {
-    public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
+    public class SingletonBehaviour<T> : SerializedMonoBehaviour where T : SerializedMonoBehaviour
     {
         private static T _instance;
         public static T Instance
