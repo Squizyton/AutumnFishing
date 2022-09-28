@@ -34,7 +34,7 @@ public class PlayerInput : MonoBehaviour
         //shoots a raycast from the center of the screen
         if (Physics.Raycast(
                 cameraController.unityCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0)),
-                out hit, 20, interactableLayer))
+                out hit, 5, interactableLayer))
         {
             if (!hit.collider.TryGetComponent(out PickupableObject pickup)) return;
 
@@ -47,5 +47,11 @@ public class PlayerInput : MonoBehaviour
         {
             UIManager.Instance.SetCrosshair(null,.1f);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(cameraController.unityCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0)));
     }
 }

@@ -9,12 +9,12 @@ namespace Singleton
         {
             get
             {
-                if (_instance == null)
+                if (!_instance)
                 {
                     _instance = GameObject.FindObjectOfType<T>();
-                    if (_instance == null)
+                    if (!_instance)
                     {
-                        GameObject obj = new GameObject();
+                         var obj = new GameObject();
                         _instance = obj.AddComponent<T>();
                     }
                 }

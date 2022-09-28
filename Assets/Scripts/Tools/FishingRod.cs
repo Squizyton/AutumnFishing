@@ -30,6 +30,10 @@ namespace ItemActions
         [Title("Line Renderer")] [SerializeField]
         private LineRenderer lineRenderer;
 
+        
+        
+        private Coroutine lastCoroutine;
+        
         private void Start()
         {
             UIManager.Instance.SetMaxFishingSlider(_maxChargeTime);
@@ -41,7 +45,7 @@ namespace ItemActions
             {
                 if (!isCharging)
                 {
-                    StartCoroutine(StartChargingCooldown());
+                    lastCoroutine = StartCoroutine(StartChargingCooldown());
                 }
             }
             else
@@ -72,6 +76,12 @@ namespace ItemActions
         {
             if (isCharging)
                 fishingRodAnimator.SetTrigger("castout");
+            else if(!castedOut)
+            {
+                StopCoroutine(lastCoroutine);
+                chargeTime = 0;
+                UIManager.Instance.SetFishingSliderActive(false);
+            }
         }
 
         public override void OnRightClick()
@@ -82,9 +92,9 @@ namespace ItemActions
         private IEnumerator StartChargingCooldown()
         {
             chargeTime = 0;
-            UIManager.Instance.UpdateFishingSlider(0);
-            UIManager.Instance.SetFishingSliderActive(true);
-            yield return new WaitForSeconds(.5f);
+            UIManager.Instance.UpdateFishingSlider(chargeTime);
+          
+            yield return new WaitForSeconds(.4f);
             isCharging = true;
         }
 
@@ -99,6 +109,9 @@ namespace ItemActions
                 chargeTime = _maxChargeTime;
             }
 
+            if(chargeTime > 0)
+                UIManager.Instance.SetFishingSliderActive(true);
+            
             UIManager.Instance.UpdateFishingSlider(chargeTime);
         }
 
