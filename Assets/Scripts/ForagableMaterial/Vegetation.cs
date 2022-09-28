@@ -6,6 +6,7 @@ namespace ForagableMaterial
     public class Vegetation : ScriptableObject
     {
         public string materialName;
+        public GameObject prefab;
         public Sprite sprite;   
         public int maxStack;
     }

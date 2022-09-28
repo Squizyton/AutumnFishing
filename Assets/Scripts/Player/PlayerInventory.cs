@@ -1,41 +1,53 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using ForagableMaterial;
 using Singleton;
 using Sirenix.OdinInspector;
 using Tools;
-using UnityEngine;
 
-public class PlayerInventory : SingletonBehaviour<PlayerInventory>
+namespace Player
 {
-    [Title("Current item")] public Tool currentTool;
-
-    [Title("Tools")] public List<Tool> tools;
-
-    [Title("Foragable Materials")] public Dictionary<Vegetation, int> foragableMaterials;
-
-    private void Start()
+    public class PlayerInventory : SingletonBehaviour<PlayerInventory>
     {
-        foragableMaterials = new Dictionary<Vegetation, int>();
-    }
+        [Title("Current item")] public Tool currentTool;
 
-    //Add the material to the inventory
-    public bool AddToInventory(Vegetation flora)
-    {
-        //If the material is already in the inventory, add 1 to the amount
-        if (foragableMaterials.ContainsKey(flora))
-            //If the amount is less than the max amount, add 1 to the amount
-            if (foragableMaterials[flora] < flora.maxStack)
-                foragableMaterials[flora]++;
+        [Title("Tools")] public List<Tool> tools;
+
+        [Title("Foragable Materials")] public Dictionary<Vegetation, StoredItem> foragableMaterials;
+
+        private void Start()
+        {
+            foragableMaterials = new Dictionary<Vegetation, StoredItem>();
+        }
+
+        //Add the material to the inventory
+        public bool AddToInventory(Vegetation flora)
+        {
+            //If the material is already in the inventory, add 1 to the amount
+            if (foragableMaterials.ContainsKey(flora))
+                //If the amount is less than the max amount, add 1 to the amount
+                if (foragableMaterials[flora].amount < flora.maxStack)
+                    foragableMaterials[flora].amount++;
+                else
+                {
+                    //return false if the amount is equal to the max amount
+                    return false;
+                }
             else
-            {
-                //return false if the amount is equal to the max amount
-                return false;
-            }
-        else
-            foragableMaterials.Add(flora, 1);
+                foragableMaterials.Add(flora, new StoredItem(flora));
 
-        return true;
+            return true;
+        }
+    
+        public class StoredItem
+        {
+            public int amount;
+            public Vegetation vegetation;
+
+            public StoredItem(Vegetation vegetation)
+            {
+                this.vegetation = vegetation;
+                amount = 1;
+            }
+        }
     }
 }
