@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Title("Camera Settings")]
-    [SerializeField]private CinemachineVirtualCamera playerCamera;
+    [Title("Camera Settings")] public Camera unityCamera;
+    public CinemachineVirtualCamera playerCamera;
     [SerializeField]private float mouseSensitivity = 100f;
     
     

@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
       {
         
 //Move the player in the direction of the axis and the direction player is looking
-         rb.MovePosition(transform.position + (transform.forward * axis.z + transform.right * axis.x) * currentSpeed * Time.deltaTime);
+         rb.MovePosition(transform.position + (transform.forward * axis.z + transform.right * axis.x) * (currentSpeed * Time.deltaTime));
 
       }else
       {
