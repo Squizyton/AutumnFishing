@@ -33,10 +33,15 @@ namespace ItemActions
         
         
         private Coroutine lastCoroutine;
-        
-        private void Start()
+
+        public override void OnEquip()
         {
             UIManager.Instance.SetMaxFishingSlider(_maxChargeTime);
+        }
+
+        public override void OnUnequip()
+        {
+            //Nothing happens
         }
 
         public override void OnLeftClick()
