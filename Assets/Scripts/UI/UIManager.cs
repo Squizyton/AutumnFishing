@@ -42,16 +42,13 @@ namespace UI
         {
             if (!sprite && crosshair.sprite != originalCrosshair)
             {
-                Debug.Log(size);
                 crosshair.gameObject.transform.localScale = new Vector3(size, size, 1);
                 crosshair.sprite = originalCrosshair;
             }
 
-            if (sprite && crosshair.sprite != sprite)
-            {   
-                crosshair.gameObject.transform.localScale = new Vector3(size, size, 1);
-                crosshair.sprite = sprite;
-            }
+            if (!sprite || crosshair.sprite == sprite) return;
+            crosshair.gameObject.transform.localScale = new Vector3(size, size, 1);
+            crosshair.sprite = sprite;
         }
     }
 }

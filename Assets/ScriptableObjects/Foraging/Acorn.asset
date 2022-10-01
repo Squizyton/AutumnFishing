@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0922a48e291bcf640bcafa05864ea9f9, type: 3}
   m_Name: Acorn
   m_EditorClassIdentifier: 
-  name: Acorn
+  materialName: Acorn!
+  prefab: {fileID: 2136684448047401416, guid: fee4f80ac73d8dd428a85054f43105b3, type: 3}
   sprite: {fileID: 0}
   maxStack: 999

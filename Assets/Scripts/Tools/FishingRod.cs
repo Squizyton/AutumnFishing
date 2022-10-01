@@ -64,6 +64,8 @@ namespace ItemActions
 
         public void Update()
         {
+            Debug.Log("Hello?");
+            
             if (isCharging)
             {
                 if (Input.GetMouseButton(0))
