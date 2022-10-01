@@ -17,16 +17,25 @@ public class PlayerInput : MonoBehaviour
 
         Raycasting();
         
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+            PlayerInventory.Instance.SwitchTool(0);
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+            PlayerInventory.Instance.SwitchTool(1);
+
+
+        if (!PlayerInventory.Instance.currentTool) return;
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
             PlayerInventory.Instance.currentTool.OnLeftClick();
         if (Input.GetKeyDown(KeyCode.Mouse1))
             PlayerInventory.Instance.currentTool.OnRightClick();
         if (Input.GetKeyUp(KeyCode.Mouse0))
             PlayerInventory.Instance.currentTool.OnLetGo();
+       
     }
 
 
-    public void Raycasting()
+    private void Raycasting()
     {
         RaycastHit hit;
         
