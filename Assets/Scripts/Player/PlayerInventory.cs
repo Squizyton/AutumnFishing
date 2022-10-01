@@ -1,8 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using ForagableMaterial;
 using Singleton;
 using Sirenix.OdinInspector;
 using Tools;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Player
 {
@@ -37,7 +41,22 @@ namespace Player
 
             return true;
         }
-    
+
+
+        public void SwitchTool(int number)
+        {
+            if (currentTool)
+            {
+                currentTool.OnUnequip();
+                currentTool.gameObject.SetActive(false);
+            }
+
+            currentTool = tools[number];
+
+            currentTool.gameObject.SetActive(true);
+            currentTool.OnEquip();
+        }
+
         public class StoredItem
         {
             public int amount;
