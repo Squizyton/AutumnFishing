@@ -15,6 +15,6 @@ MonoBehaviour:
   animalName: 
   willEatAnything: 0
   stopWeight: 0
-  walkSpeed: 4
+  walkSpeed: 2
   runSpeed: 10
-  sightRadius: 8.44
+  sightRadius: 8.24
