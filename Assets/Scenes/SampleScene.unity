@@ -9622,6 +9622,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544848097}
   m_Mesh: {fileID: 4300000, guid: ffa4ffbdbeb9c4369b6c58cf3a9f7394, type: 2}
+--- !u!95 &549412707 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2463159076218072894, guid: 8d4ecaf818d6b504f991a963a30e58d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138593637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549440513
 GameObject:
   m_ObjectHideFlags: 0
@@ -33194,10 +33200,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1284346704, guid: 8d4ecaf818d6b504f991a963a30e58d7, type: 3}
+      propertyPath: m_Center.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284346704, guid: 8d4ecaf818d6b504f991a963a30e58d7, type: 3}
+      propertyPath: m_Center.z
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2115574499313453309, guid: 8d4ecaf818d6b504f991a963a30e58d7,
         type: 3}
       propertyPath: m_Name
       value: Reindeer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463159075642088220, guid: 8d4ecaf818d6b504f991a963a30e58d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463159076146345887, guid: 8d4ecaf818d6b504f991a963a30e58d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463159076227842254, guid: 8d4ecaf818d6b504f991a963a30e58d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463159077635843094, guid: 8d4ecaf818d6b504f991a963a30e58d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.237
       objectReference: {fileID: 0}
     - target: {fileID: 4501798677807262759, guid: 8d4ecaf818d6b504f991a963a30e58d7,
         type: 3}
@@ -33212,12 +33246,12 @@ PrefabInstance:
     - target: {fileID: 4501798677807262759, guid: 8d4ecaf818d6b504f991a963a30e58d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2899995
+      value: 3.526
       objectReference: {fileID: 0}
     - target: {fileID: 4501798677807262759, guid: 8d4ecaf818d6b504f991a963a30e58d7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.15566
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4501798677807262759, guid: 8d4ecaf818d6b504f991a963a30e58d7,
         type: 3}
@@ -33282,9 +33316,16 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  anim: {fileID: 0}
-  animalInfo: {fileID: 0}
+    SerializationNodes:
+    - Name: currentState
+      Entry: 6
+      Data: 
+  anim: {fileID: 549412707}
+  animalInfo: {fileID: 11400000, guid: 168ca281570a9374a8b4a6849bcac11b, type: 2}
+  foragableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  offset: {x: 0, y: 1.68, z: 0}
 --- !u!4 &2147126525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7112a441f31e64aae80650ee2fd2ac8b,

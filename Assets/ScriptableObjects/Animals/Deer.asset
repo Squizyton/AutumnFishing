@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: 
   willEatAnything: 0
-  favoriteFood: {fileID: 0}
-  secondFavoriteFood: {fileID: 0}
-  dislikedFood: {fileID: 0}
-  walkSpeed: 0
-  runSpeed: 0
+  stopWeight: 0
+  walkSpeed: 4
+  runSpeed: 10
+  sightRadius: 8.44

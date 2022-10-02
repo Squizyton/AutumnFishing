@@ -13,17 +13,22 @@ public class AnimalSO : ScriptableObject
     [Title("Food")]
     [Space(4)]
     public bool willEatAnything;
-    [ShowIf("@!willEatAnything")]
-    public Vegetation favoriteFood;
-    [ShowIf("@!willEatAnything")]
-    public Vegetation secondFavoriteFood;
-    [ShowIf("@!willEatAnything")]
-    public Vegetation dislikedFood;
+    [ShowIf("@willEatAnything")] public float stopWeight;
+    
+    [ShowIf("@!willEatAnything")] public List<EatFood> foodItWillEat;
+    
 
 
 
     [Title("Stats")] 
     public float walkSpeed;
     public float runSpeed;
+    public float sightRadius;
     
+    
+    public class EatFood
+    {
+        public Vegetation food;
+        public float weight;
+    }
 }
