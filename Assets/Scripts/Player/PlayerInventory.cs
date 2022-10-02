@@ -61,11 +61,17 @@ namespace Player
         {
             public int amount;
             public Vegetation vegetation;
-
+            public bool playerThrown;
             public StoredItem(Vegetation vegetation)
             {
                 this.vegetation = vegetation;
                 amount = 1;
+            }
+
+
+            public void IsThrown(bool value)
+            {
+                playerThrown = value;
             }
         }
     }
