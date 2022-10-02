@@ -11,25 +11,36 @@ public class WanderAround : State
 {
     private Vector3 _targetPosition; // The position we are moving towards
     private Transform _transform;
+    private Quaternion _lookRotation;
     public override void OnInitialized(Animal passedAnimal)
     {
         animal = passedAnimal;
         _transform = animal.transform;
         //Generate a random position to move towards
         _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+        _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
     }
 
     public override void Update()
     {
+
+        //Rotate it towards the target position
+
+        Debug.Log("Rotating");
+        
+        _transform.rotation = Quaternion.Slerp(_transform.rotation, _lookRotation, Time.deltaTime * 5f);
+        
         //Move towards the target position
         _transform.position = Vector3.MoveTowards(animal.transform.position, _targetPosition,
             animal.animalInfo.walkSpeed * Time.deltaTime);
-        
-        
+
         //If we are close enough to the target position, generate a new one
         if (Vector3.Distance(animal.transform.position, _targetPosition) < 0.1f)
         {
+            
+            Debug.Log("Generating new target");
             _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+            _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
         }
         
         
