@@ -31264,6 +31264,7 @@ MonoBehaviour:
   currentIndex: 0
   maxThrowForce: 2
   isCharging: 0
+  throwAngle: 0
 --- !u!1 &2006507158
 GameObject:
   m_ObjectHideFlags: 0
@@ -33255,6 +33256,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d4ecaf818d6b504f991a963a30e58d7, type: 3}
+--- !u!1 &2138593638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2115574499313453309, guid: 8d4ecaf818d6b504f991a963a30e58d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138593637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2138593639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138593638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068f11408ead9ab47921b9c24c1e030b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  anim: {fileID: 0}
+  animalInfo: {fileID: 0}
 --- !u!4 &2147126525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7112a441f31e64aae80650ee2fd2ac8b,
