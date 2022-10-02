@@ -11,7 +11,9 @@ public class Animal : SerializedMonoBehaviour
     [SerializeField] private Animator anim;
     public AnimalSO animalInfo;
     public LayerMask foragableLayer;
-    
+
+
+    [Title("Stats")] [SerializeField] private float happiness;
     
     [Title("States")]
     [SerializeField]private State currentState;
