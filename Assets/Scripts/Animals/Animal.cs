@@ -1,12 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AI;
 using Sirenix.OdinInspector;
 using States;
 using UnityEngine;
 
 public class Animal : SerializedMonoBehaviour
 {
+
+    [Title("AI")] 
+    [SerializeField] private AIData ai;
+    [SerializeField] private List<Detector> detectors;
+    [SerializeField] private float detectionDelay = 0.05f;
+    
+    
+    
+    
+    
     [Title("Base Variables")]
     [SerializeField] private Animator anim;
     public AnimalSO animalInfo;
@@ -24,17 +35,33 @@ public class Animal : SerializedMonoBehaviour
 
     private void Start()
     {
-        currentState = new WanderAround();
-        currentState.OnInitialized(this);
+        //currentState = new WanderAround();
+        //currentState.OnInitialized(this);
+        
+        
+        InvokeRepeating("PerformDetection",0,detectionDelay);
     }
 
-    public void Update()
+    
+    private void PerformDetection()
     {
-        currentState.Update();
+        foreach (var detector in detectors)
+        {
+            detector.Detect(aiData: ai);
+        }
     }
     
-    
-    
+    public void Update()
+    {
+        currentState?.Update();
+    }
+
+    public void FixedUpdate()
+    {
+        currentState?.FixedUpdate();
+    }
+
+
     public void TransitionToState(State nextState)
     {
         currentState.OnExit();

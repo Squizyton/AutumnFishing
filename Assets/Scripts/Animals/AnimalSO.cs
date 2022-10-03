@@ -26,6 +26,7 @@ public class AnimalSO : ScriptableObject
     public float sightRadius;
     
     
+    [System.Serializable]
     public class EatFood
     {
         public Vegetation food;
