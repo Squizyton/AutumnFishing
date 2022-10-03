@@ -35,8 +35,8 @@ public class Animal : SerializedMonoBehaviour
 
     private void Start()
     {
-        //currentState = new WanderAround();
-        //currentState.OnInitialized(this);
+        currentState = new WanderAround();
+        currentState.OnInitialized(this);
         
         
         InvokeRepeating("PerformDetection",0,detectionDelay);
