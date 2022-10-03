@@ -7,9 +7,9 @@ namespace States
     {
         protected Animal animal;
         
-
         public abstract void OnInitialized(Animal passedAnimal);
         public abstract void Update();
+        public abstract void FixedUpdate();
         public abstract void OnExit();
     
     }
