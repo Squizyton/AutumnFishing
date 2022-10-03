@@ -38,7 +38,6 @@ public class WanderAround : State
         //If we are close enough to the target position, generate a new one
         if (!(Vector3.Distance(animal.transform.position, _targetPosition) < 0.1f)) return;
         
-        Debug.Log("Generating new target");
         _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
         _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
     }
