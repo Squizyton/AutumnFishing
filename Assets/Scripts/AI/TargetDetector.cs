@@ -16,6 +16,12 @@ public class TargetDetector : Detector
 
     [SerializeField] private List<Transform> colliders;
 
+    
+     public void OnStartUp(LayerMask layer)
+    {
+        this.obstaclesLayer = layer;
+    }
+    
     public override void Detect(AIData aiData)
     {
         //Find out if player is near

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AI;
 using Sirenix.OdinInspector;
 using States;
@@ -11,11 +12,12 @@ public class Animal : SerializedMonoBehaviour
 
     [Title("AI")] 
     [SerializeField] private AIData ai;
-    [SerializeField] private List<Detector> detectors;
+    //TODO: Move these to States, so they aren't running constantly
+    [SerializeField,ReadOnly] private List<Detector> detectors;
+    [SerializeField,ReadOnly]private List<SteeringBehaviour> steeringBehaviours;
     [SerializeField] private float detectionDelay = 0.05f;
-    
-    
-    
+    [SerializeField] private Transform DetectorHolder;
+    [SerializeField] private Transform SteeringBehaviourHolder;
     
     
     [Title("Base Variables")]
@@ -31,24 +33,24 @@ public class Animal : SerializedMonoBehaviour
     
 
     [Title("Debug")] [SerializeField] private Vector3 offset;
-
-
+    
     private void Start()
     {
         currentState = new WanderAround();
-        currentState.OnInitialized(this);
+        currentState.OnInitialized(this,ai);
         
         
-        InvokeRepeating("PerformDetection",0,detectionDelay);
+        InvokeRepeating(nameof(PerformDetection), 0, detectionDelay);
     }
 
-    
+    //Detector's stay on the animal, so they can be updated here
     private void PerformDetection()
     {
         foreach (var detector in detectors)
         {
             detector.Detect(aiData: ai);
         }
+        
     }
     
     public void Update()
@@ -60,19 +62,51 @@ public class Animal : SerializedMonoBehaviour
     {
         currentState?.FixedUpdate();
     }
-
-
+    
     public void TransitionToState(State nextState)
     {
         currentState.OnExit();
         currentState = nextState;
-        currentState.OnInitialized(this);
+        currentState.OnInitialized(this,ai);
     }
-
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position + offset, animalInfo.sightRadius);
+    }
+    
+    public List<SteeringBehaviour> GetSteeringBehaviours()
+    {
+        return steeringBehaviours;
+    }
+    
+    public void AddBehaviour(SteeringBehaviour behaviour)
+    {
+        steeringBehaviours.Add(behaviour);
+        behaviour.transform.parent = SteeringBehaviourHolder;
+    }
+    
+    public void AddDetector(Detector detector)
+    {
+        detectors.Add(detector);
+        detector.transform.parent = DetectorHolder;
+    }
+
+    public void RemoveEverything()
+    {
+        foreach(var detector in detectors)
+        {
+            Destroy(detector.gameObject);
+            
+        }
+        
+        foreach(var behaviour in steeringBehaviours)
+        {
+            Destroy(behaviour.gameObject);
+        }
+        
+        detectors.Clear();
+        steeringBehaviours.Clear();
     }
 }

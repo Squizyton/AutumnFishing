@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using AI;
 using ForagableMaterial;
 using States;
 using UnityEngine;
@@ -12,13 +13,32 @@ public class WanderAround : State
     private Vector3 _targetPosition; // The position we are moving towards
     private Transform _transform;
     private Quaternion _lookRotation;
-    public override void OnInitialized(Animal passedAnimal)
+    
+    
+    private AIData animalAI;
+    private ContextSolver contextSolver;
+    public override void OnInitialized(Animal passedAnimal, AIData passedAI)
     {
         animal = passedAnimal;
+        animalAI = passedAI;
         _transform = animal.transform;
         //Generate a random position to move towards
         _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
         _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
+        
+        //TODO: Find a better way to do this
+        var obstacleAvoidenceBehaviour = new GameObject();
+        animal.AddBehaviour(obstacleAvoidenceBehaviour.AddComponent<ObstacleAvoidanceBehaviour>());
+        var targetDetectionBehaviour = new GameObject().AddComponent<ObstacleDetector>();
+        targetDetectionBehaviour.OnStartUp(animalAI.obstaclesLayerMask);
+        animal.AddDetector(targetDetectionBehaviour);
+        var seekBehaviour = new GameObject().AddComponent<SeekBehaviour>();
+        animal.AddBehaviour(seekBehaviour);
+        var solver = new GameObject().AddComponent<ContextSolver>();
+        solver.transform.parent.SetParent(passedAnimal.gameObject.transform);
+        contextSolver = solver;
+        
+        animalAI.FeedTarget(Object.Instantiate(new GameObject(), _targetPosition, Quaternion.identity).transform);
     }
 
     public override void Update()
@@ -31,9 +51,9 @@ public class WanderAround : State
         //Rotate it towards the target position
         _transform.rotation = Quaternion.Slerp(_transform.rotation, _lookRotation, Time.deltaTime * 5f);
         
-        //Move towards the target position
-        _transform.position = Vector3.MoveTowards(animal.transform.position, _targetPosition,
-            animal.animalInfo.walkSpeed * Time.deltaTime);
+        //Move towards the target position based on context solver
+        _transform.position += contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI) * (Time.deltaTime * animal.animalInfo.walkSpeed);
+        
 
         //If we are close enough to the target position, generate a new one
         if (!(Vector3.Distance(animal.transform.position, _targetPosition) < 0.1f)) return;
@@ -90,6 +110,7 @@ public class WanderAround : State
 
     public override void OnExit()
     {
+        animal.RemoveEverything();
     }
 
     void OnDrawGizmos()

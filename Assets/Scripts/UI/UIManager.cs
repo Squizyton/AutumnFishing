@@ -11,7 +11,7 @@ namespace UI
         [Title("Crosshair")] [SerializeField] private Image crosshair;
 
         //TODO: Be able to change crosshair size
-        [SerializeField] private float crosshairSize = 10f;
+        //[SerializeField] private float crosshairSize = 10f;
         [SerializeField] private Sprite originalCrosshair;
         [SerializeField] private Sprite pickupCrosshair;
 

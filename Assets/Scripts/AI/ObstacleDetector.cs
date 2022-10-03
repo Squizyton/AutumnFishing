@@ -17,6 +17,11 @@ namespace AI
     [Title("Debug")] [SerializeField] private bool showGizmos;
 
 
+    public void OnStartUp(LayerMask layerMask)
+    {
+      this.layerMask = layerMask;
+    }
+    
     public override void Detect(AIData aiData)
     {
       //TODO: Change to NonAlloc

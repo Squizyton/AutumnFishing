@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AIData : MonoBehaviour
 {
+
+   public LayerMask obstaclesLayerMask;
    
    //Targets detected by AI, in case we want multiple targets
    public List<Transform> targets = null;
@@ -17,4 +19,9 @@ public class AIData : MonoBehaviour
    public int GetTargetsCount() => targets?.Count ?? 0;
    
    
+   
+   public void FeedTarget(Transform target)
+   {
+      currentTarget = target;
+   }
 }
