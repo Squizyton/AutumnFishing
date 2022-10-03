@@ -23,11 +23,12 @@ public class WanderAround : State
 
     public override void Update()
     {
+        CheckColliders();
+    }
 
+    public override void FixedUpdate()
+    { 
         //Rotate it towards the target position
-
-        Debug.Log("Rotating");
-        
         _transform.rotation = Quaternion.Slerp(_transform.rotation, _lookRotation, Time.deltaTime * 5f);
         
         //Move towards the target position
@@ -35,16 +36,17 @@ public class WanderAround : State
             animal.animalInfo.walkSpeed * Time.deltaTime);
 
         //If we are close enough to the target position, generate a new one
-        if (Vector3.Distance(animal.transform.position, _targetPosition) < 0.1f)
-        {
-            
-            Debug.Log("Generating new target");
-            _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-            _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
-        }
+        if (!(Vector3.Distance(animal.transform.position, _targetPosition) < 0.1f)) return;
         
-        
-        
+        Debug.Log("Generating new target");
+        _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+        _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
+    }
+
+
+
+    private void CheckColliders()
+    {
         //Colision detection
         const int maxColliders = 10;
         var hitColliders = new Collider[maxColliders];
@@ -84,7 +86,6 @@ public class WanderAround : State
                 //Check if player is sprinting, if so, change state to runaway
                 
             }
-            
         }
     }
 
