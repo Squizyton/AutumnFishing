@@ -12,33 +12,44 @@ public class WanderAround : State
 {
     private Vector3 _targetPosition; // The position we are moving towards
     private Transform _transform;
-    private Quaternion _lookRotation;
+   
     
     
     private AIData animalAI;
     private ContextSolver contextSolver;
+    private Transform waypoint;
     public override void OnInitialized(Animal passedAnimal, AIData passedAI)
     {
         animal = passedAnimal;
         animalAI = passedAI;
         _transform = animal.transform;
         //Generate a random position to move towards
-        _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-        _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
+        _targetPosition = new Vector3(-6.23f, 0, 94.33847f);
+      
         
         //TODO: Find a better way to do this
-        var obstacleAvoidenceBehaviour = new GameObject();
+        var obstacleAvoidenceBehaviour = new GameObject
+        {
+            name = "ObstacleAvoidenceBehaviour"
+        };
         animal.AddBehaviour(obstacleAvoidenceBehaviour.AddComponent<ObstacleAvoidanceBehaviour>());
         var targetDetectionBehaviour = new GameObject().AddComponent<ObstacleDetector>();
+        targetDetectionBehaviour.name = "ObstacleDetectionBehaviour";
         targetDetectionBehaviour.OnStartUp(animalAI.obstaclesLayerMask);
         animal.AddDetector(targetDetectionBehaviour);
         var seekBehaviour = new GameObject().AddComponent<SeekBehaviour>();
+        seekBehaviour.name = "SeekBehaviour";
         animal.AddBehaviour(seekBehaviour);
         var solver = new GameObject().AddComponent<ContextSolver>();
-        solver.transform.parent.SetParent(passedAnimal.gameObject.transform);
-        contextSolver = solver;
+        solver.name = "ContextSolver";
         
-        animalAI.FeedTarget(Object.Instantiate(new GameObject(), _targetPosition, Quaternion.identity).transform);
+        Debug.Log("Solver: " + solver + "Parent:" + passedAnimal.gameObject);
+        solver.transform.SetParent(passedAnimal.gameObject.transform);
+        contextSolver = solver;
+
+        waypoint = Object.Instantiate(new GameObject(), _targetPosition, Quaternion.identity).transform;
+        
+        animalAI.FeedTargets(new List<Transform>{});
     }
 
     public override void Update()
@@ -48,18 +59,21 @@ public class WanderAround : State
 
     public override void FixedUpdate()
     { 
-        //Rotate it towards the target position
-        _transform.rotation = Quaternion.Slerp(_transform.rotation, _lookRotation, Time.deltaTime * 5f);
+        //Rotate it based on its forward vector
+        _transform.rotation = Quaternion.Slerp(_transform.rotation,Quaternion.LookRotation(_transform.forward + contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI)),Time.deltaTime * 5f);
+        
+        
+       
         
         //Move towards the target position based on context solver
-        _transform.position += contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI) * (Time.deltaTime * animal.animalInfo.walkSpeed);
+        Debug.Log(contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI));
+        _transform.position += (_transform.forward + contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI)) * (Time.deltaTime * animal.animalInfo.walkSpeed);
         
 
         //If we are close enough to the target position, generate a new one
         if (!(Vector3.Distance(animal.transform.position, _targetPosition) < 0.1f)) return;
         
-        _targetPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-        _lookRotation =  Quaternion.LookRotation(_targetPosition - _transform.position);
+      
     }
 
 

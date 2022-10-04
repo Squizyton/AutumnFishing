@@ -10,7 +10,7 @@ public class SeekBehaviour : SteeringBehaviour
     [Title("Thresholds")]
     //In case Agent has lost sight of target, we need to know where it was last seen. This will tell us if we are close enough
     [SerializeField]
-    private float targetReachedThreshold = 0.5f;
+    private float targetReachedThreshold = 1f;
 
     private bool _reachedLastTarget = true;
 
@@ -50,9 +50,10 @@ public class SeekBehaviour : SteeringBehaviour
         }
 
 
-        //Frst check if we have reached the target
+        //First check if we have reached the target
         if (Vector3.Distance(transform.position, targetPositionCached) < targetReachedThreshold)
         {
+            Debug.Log("Reached Target");
             _reachedLastTarget = true;
             aiData.currentTarget = null;
             return (danger, interest);

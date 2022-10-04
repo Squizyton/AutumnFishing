@@ -14,7 +14,7 @@ namespace AI
     [Title("Colliders")] private Collider[] colliders;
   
   
-    [Title("Debug")] [SerializeField] private bool showGizmos;
+    [Title("Debug")] [SerializeField] private bool showGizmos = true;
 
 
     public void OnStartUp(LayerMask layerMask)

@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using AI;
 using Sirenix.OdinInspector;
 using States;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class Animal : SerializedMonoBehaviour
 {
@@ -85,12 +87,14 @@ public class Animal : SerializedMonoBehaviour
     {
         steeringBehaviours.Add(behaviour);
         behaviour.transform.parent = SteeringBehaviourHolder;
+        behaviour.transform.localPosition = Vector3.zero;
     }
     
     public void AddDetector(Detector detector)
     {
         detectors.Add(detector);
         detector.transform.parent = DetectorHolder;
+        detector.transform.localPosition = Vector3.zero;
     }
 
     public void RemoveEverything()

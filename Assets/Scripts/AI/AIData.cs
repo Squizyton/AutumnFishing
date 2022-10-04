@@ -20,8 +20,8 @@ public class AIData : MonoBehaviour
    
    
    
-   public void FeedTarget(Transform target)
+   public void FeedTargets(List<Transform> newTargets)
    {
-      currentTarget = target;
+      this.targets = newTargets;
    }
 }

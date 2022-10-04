@@ -7,7 +7,7 @@ using UnityEngine;
 public class ContextSolver : MonoBehaviour
 {
 
-   [Title("Debug")] [SerializeField] private bool showGizmos;
+   [Title("Debug")] [SerializeField] private bool showGizmos = true;
    private float[] _interestGizmo = Array.Empty<float>();
    private Vector3 _resultDirection = Vector3.zero;
    private float _rayLength = 1f;
@@ -43,14 +43,17 @@ public class ContextSolver : MonoBehaviour
       
       
       //Get the average direction
-      for(int i = 0; i < 8; i++)
+      for(var i = 0; i < 8; i++)
       {
+         
          outputDirection += Directions.eightDirections[i] * interest[i];
+         Debug.Log(outputDirection);
       }
       
       //Normalise the direction
       outputDirection.Normalize();
-
+      //Set the result direction
+      _resultDirection = outputDirection;
       //Return the direction
       return _resultDirection;
    }

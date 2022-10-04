@@ -12,7 +12,7 @@ public class TargetDetector : Detector
 
 
     [Title("Debug Values")] [SerializeField]
-    private bool showGizmos;
+    private bool showGizmos = true;
 
     [SerializeField] private List<Transform> colliders;
 
@@ -30,8 +30,6 @@ public class TargetDetector : Detector
 
         if (playerCollider.Length > 0)
         {
-            
-            Debug.Log("Dick Tit Fuck McGuck");
             var direction = (playerCollider[0].transform.position - transform.position).normalized;
 
             Physics.Raycast(transform.position, direction, out var hit, targetDetectionRange, obstaclesLayer);
@@ -43,7 +41,6 @@ public class TargetDetector : Detector
             }
             else
             {
-                Debug.Log("This is being called");
                 colliders = null;
             }
         }

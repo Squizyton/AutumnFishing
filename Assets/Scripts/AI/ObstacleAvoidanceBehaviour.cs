@@ -13,11 +13,11 @@ public class ObstacleAvoidanceBehaviour : SteeringBehaviour
     private float radius = 2f;
 
     //Avoid at all cost if distance is less than or equal to this value -> set value automatically based on capsule collider
-    [SerializeField] private float agentColliderSize = 0.6f;
+    [SerializeField] private float agentColliderSize = 0.3f;
 
 
     //Debug values
-    [Title("Debug")] [SerializeField] private bool showGizmos;
+    [Title("Debug")] [SerializeField] private bool showGizmos = true;
     private float[] dangersResultTemp = null;
 
 
@@ -80,13 +80,13 @@ public static class Directions
 {
     public static List<Vector3> eightDirections = new()
     {
-        Vector3.forward.normalized,
-        Vector3.forward + Vector3.right.normalized,
-        Vector3.right.normalized,
-        Vector3.right + Vector3.back.normalized,
-        Vector3.back.normalized,
-        Vector3.back + Vector3.left.normalized,
-        Vector3.left.normalized,
-        Vector3.left + Vector3.forward.normalized
+        Vector3.forward,
+        Vector3.forward + Vector3.right,
+        Vector3.right,
+        Vector3.right + Vector3.back,
+        Vector3.back,
+        Vector3.back + Vector3.left,
+        Vector3.left,
+        Vector3.left + Vector3.forward
     };
 }
