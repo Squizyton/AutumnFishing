@@ -1,68 +1,65 @@
-using System.Collections;
 using System.Collections.Generic;
-using AI;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class TargetDetector : Detector
+namespace AI
 {
-    private float targetDetectionRange = 8.24f;
+    public class TargetDetector : Detector
+    {
+        private float targetDetectionRange = 8.24f;
 
-    [SerializeField] private LayerMask obstaclesLayer, playerLayerMask;
+        private LayerMask  playerLayerMask;
 
 
-    [Title("Debug Values")] [SerializeField]
-    private bool showGizmos = true;
+        [Title("Debug Values")] [SerializeField]
+        private bool showGizmos = true;
 
-    [SerializeField] private List<Transform> colliders;
+        [SerializeField] private List<Transform> colliders;
 
     
-     public void OnStartUp(LayerMask layer)
-    {
-        this.obstaclesLayer = layer;
-    }
     
-    public override void Detect(AIData aiData)
-    {
-        //Find out if player is near
-        var playerCollider = Physics.OverlapSphere(transform.position, targetDetectionRange, playerLayerMask);
-
-
-        if (playerCollider.Length > 0)
+        public override void Detect(AIData aiData)
         {
-            var direction = (playerCollider[0].transform.position - transform.position).normalized;
+            //Find out if player is near
+            var playerCollider = Physics.OverlapSphere(_transform.position, targetDetectionRange, playerLayerMask);
 
-            Physics.Raycast(transform.position, direction, out var hit, targetDetectionRange, obstaclesLayer);
 
-            if (hit.collider && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+            if (playerCollider.Length > 0)
             {
-                Debug.DrawRay(transform.position, direction * targetDetectionRange, Color.magenta);
-                colliders = new List<Transform>() {playerCollider[0].transform};
+                var direction = (playerCollider[0].transform.position - _transform.position).normalized;
+
+                Physics.Raycast(_transform.position, direction, out var hit, targetDetectionRange, _layerMask);
+
+                if (hit.collider && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+                {
+                    Debug.DrawRay(_transform.position, direction * targetDetectionRange, Color.magenta);
+                    colliders = new List<Transform>() {playerCollider[0].transform};
+                }
+                else
+                {
+                    colliders = null;
+                }
             }
-            else
-            {
-                colliders = null;
-            }
-        }
-        else colliders = null;
+            else colliders = null;
         
-        aiData.targets = colliders;
-    }
+            aiData.targets = colliders;
+        }
 
 
-    private void OnDrawGizmosSelected()
-    {
-        if (showGizmos == false)
-            return;
-
-        Gizmos.DrawWireSphere(transform.position, targetDetectionRange);
-
-        if (colliders == null)
-            return;
-        Gizmos.color = Color.magenta;
-        foreach (var item in colliders)
+        private void OnDrawGizmosSelected()
         {
-            Gizmos.DrawSphere(item.position, 0.3f);
+            if (showGizmos == false)
+                return;
+
+            Gizmos.DrawWireSphere(_transform.position, targetDetectionRange);
+
+            if (colliders == null)
+                return;
+            Gizmos.color = Color.magenta;
+            foreach (var item in colliders)
+            {
+                Gizmos.DrawSphere(item.position, 0.3f);
+            }
         }
     }
 }

@@ -35,13 +35,16 @@ public class Animal : SerializedMonoBehaviour
     
 
     [Title("Debug")] [SerializeField] private Vector3 offset;
-    
+    [SerializeField] private LayerMask obstacleMask;
     private void Start()
     {
+        detectors = new List<Detector>();
+        steeringBehaviours = new List<SteeringBehaviour>();
+        
+        
         currentState = new WanderAround();
         currentState.OnInitialized(this,ai);
-        
-        
+
         InvokeRepeating(nameof(PerformDetection), 0, detectionDelay);
     }
 
@@ -85,31 +88,20 @@ public class Animal : SerializedMonoBehaviour
     
     public void AddBehaviour(SteeringBehaviour behaviour)
     {
+        behaviour.OnStart(transform);
         steeringBehaviours.Add(behaviour);
-        behaviour.transform.parent = SteeringBehaviourHolder;
-        behaviour.transform.localPosition = Vector3.zero;
+        
     }
     
     public void AddDetector(Detector detector)
     {
+        detector.OnStart(transform,ai.obstaclesLayerMask);
         detectors.Add(detector);
-        detector.transform.parent = DetectorHolder;
-        detector.transform.localPosition = Vector3.zero;
+      
     }
 
     public void RemoveEverything()
     {
-        foreach(var detector in detectors)
-        {
-            Destroy(detector.gameObject);
-            
-        }
-        
-        foreach(var behaviour in steeringBehaviours)
-        {
-            Destroy(behaviour.gameObject);
-        }
-        
         detectors.Clear();
         steeringBehaviours.Clear();
     }

@@ -10,7 +10,7 @@ public class SeekBehaviour : SteeringBehaviour
     [Title("Thresholds")]
     //In case Agent has lost sight of target, we need to know where it was last seen. This will tell us if we are close enough
     [SerializeField]
-    private float targetReachedThreshold = 1f;
+    private float targetReachedThreshold = 0.3f;
 
     private bool _reachedLastTarget = true;
 
@@ -38,7 +38,7 @@ public class SeekBehaviour : SteeringBehaviour
             else
             {
                 aiData.currentTarget = aiData.targets
-                    .OrderBy(target => Vector3.Distance(target.position, transform.position)).FirstOrDefault();
+                    .OrderBy(target => Vector3.Distance(target.position, _transform.position)).FirstOrDefault();
                 _reachedLastTarget = false;
             }
         }
@@ -51,20 +51,21 @@ public class SeekBehaviour : SteeringBehaviour
 
 
         //First check if we have reached the target
-        if (Vector3.Distance(transform.position, targetPositionCached) < targetReachedThreshold)
+        if (Vector3.Distance(_transform.position, targetPositionCached) < targetReachedThreshold)
         {
             Debug.Log("Reached Target");
             _reachedLastTarget = true;
-            aiData.currentTarget = null;
+           //TODO: Not really a todo, however uncomment if needed in future
+           // aiData.currentTarget = null;
             return (danger, interest);
         }
 
 
         //if we haven't yet reeach the target do the main logic of finding the interest directions
-        var directionToTarget = (targetPositionCached - transform.position);
+        var directionToTarget = (targetPositionCached - _transform.position);
 
         for (var i = 0; i < interest.Length; i++)
-        {
+        { 
             var result = Vector3.Dot(directionToTarget.normalized, Directions.eightDirections[i]);
 
 
@@ -89,7 +90,7 @@ public class SeekBehaviour : SteeringBehaviour
         {
             Gizmos.color = Color.green;
             for (int i = 0; i < interestsTemp.Length; i++)
-                Gizmos.DrawRay(transform.position, Directions.eightDirections[i] * interestsTemp[i]);
+                Gizmos.DrawRay(_transform.position, Directions.eightDirections[i] * interestsTemp[i]);
         }
 
         if (_reachedLastTarget == false)

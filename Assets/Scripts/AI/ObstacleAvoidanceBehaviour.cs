@@ -10,13 +10,13 @@ public class ObstacleAvoidanceBehaviour : SteeringBehaviour
     [Title("Obstacle Avoidance")]
     //Radius is used to check for obstacles: same as the radius of the obstacle detection
     [SerializeField]
-    private float radius = 2f;
+    private float radius = 8f;
 
     //Avoid at all cost if distance is less than or equal to this value -> set value automatically based on capsule collider
     [SerializeField] private float agentColliderSize = 0.3f;
 
 
-    //Debug values
+    //Debug valu
     [Title("Debug")] [SerializeField] private bool showGizmos = true;
     private float[] dangersResultTemp = null;
 
@@ -26,7 +26,7 @@ public class ObstacleAvoidanceBehaviour : SteeringBehaviour
         foreach (var obstacleCollider in aiData.obstacles)
         {
             //Get the direction to the obstacle based on how close it is to the agent on the closest point
-            var directionToObstacle = obstacleCollider.ClosestPoint(transform.position) - transform.position;
+            var directionToObstacle = obstacleCollider.ClosestPoint(_transform.position) - _transform.position;
 
             //
             var distanceToObstacle = directionToObstacle.magnitude;
@@ -67,7 +67,7 @@ public class ObstacleAvoidanceBehaviour : SteeringBehaviour
         
         for(var i = 0; i < dangersResultTemp.Length; i++)
         {
-           Gizmos.DrawRay(transform.position, Directions.eightDirections[i] * dangersResultTemp[i]);
+           Gizmos.DrawRay(_transform.position, Directions.eightDirections[i] * dangersResultTemp[i]);
         }
     }
 }

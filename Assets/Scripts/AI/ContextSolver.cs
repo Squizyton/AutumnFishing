@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class ContextSolver : MonoBehaviour
+public class ContextSolver 
 {
 
    [Title("Debug")] [SerializeField] private bool showGizmos = true;
@@ -62,7 +62,7 @@ public class ContextSolver : MonoBehaviour
    {
       if (!showGizmos) return;
       
-      Gizmos.color = Color.yellow;
-      Gizmos.DrawRay(transform.position, _resultDirection * _rayLength);
+      Gizmos.color = Color.yellow; 
+      //Gizmos.DrawRay(transform.position, _resultDirection * _rayLength);
    }
 }

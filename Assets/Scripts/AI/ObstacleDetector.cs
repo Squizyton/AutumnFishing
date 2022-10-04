@@ -5,27 +5,22 @@ namespace AI
 {
   public class ObstacleDetector : Detector
   {
-  
+
+    private Transform transform;
+    
     //The range in which the AI can detect things
     [SerializeField] private float detectionRadius = 8.24f;
-  
-    [SerializeField] private LayerMask layerMask;
+    
 
     [Title("Colliders")] private Collider[] colliders;
   
   
     [Title("Debug")] [SerializeField] private bool showGizmos = true;
-
-
-    public void OnStartUp(LayerMask layerMask)
-    {
-      this.layerMask = layerMask;
-    }
     
     public override void Detect(AIData aiData)
     {
       //TODO: Change to NonAlloc
-      colliders = Physics.OverlapSphere(transform.position, detectionRadius, layerMask);
+      colliders = Physics.OverlapSphere(_transform.position, detectionRadius, _layerMask);
       aiData.obstacles = colliders;
     }
 
