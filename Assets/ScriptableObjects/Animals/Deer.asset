@@ -21,3 +21,5 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 10
   sightRadius: 8.24
+  colliderRadius: 0
+  targetReachedThreshold: 0.5

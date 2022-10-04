@@ -8,9 +8,13 @@ using Sirenix.OdinInspector;
 using States;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
-
+[RequireComponent(typeof(AIData))]
 public class Animal : SerializedMonoBehaviour
 {
+    [Title("Transforms")]
+    [SerializeField] private Transform _head;
+    
+    
 
     [Title("AI")] 
     [SerializeField] private AIData ai;
@@ -67,14 +71,15 @@ public class Animal : SerializedMonoBehaviour
     {
         currentState?.FixedUpdate();
     }
-    
+
     public void TransitionToState(State nextState)
     {
         currentState.OnExit();
         currentState = nextState;
-        currentState.OnInitialized(this,ai);
-    }
+           currentState.OnInitialized(this,ai);
     
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

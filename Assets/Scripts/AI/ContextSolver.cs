@@ -46,9 +46,7 @@ public class ContextSolver
       //Get the average direction
       for(var i = 0; i < 8; i++)
       {
-         
          outputDirection += Directions.eightDirections[i] * interest[i];
-         Debug.Log(outputDirection);
       }
       
       //Normalise the direction
