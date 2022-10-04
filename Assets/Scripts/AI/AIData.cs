@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class AIData : MonoBehaviour
@@ -17,6 +18,11 @@ public class AIData : MonoBehaviour
    
    //Return TargetsCount
    public int GetTargetsCount() => targets?.Count ?? 0;
+
+   [Title("Behaviour/Detector variables")]
+   public float sightRadius;
+   public float colliderRadius;
+   public float targetReachThreshold;
    
    
    

@@ -24,7 +24,9 @@ public class Animal : SerializedMonoBehaviour
     
     [Title("Base Variables")]
     [SerializeField] private Animator anim;
+    [Required,OnValueChanged("@ChangeAIData()")]
     public AnimalSO animalInfo;
+    
     public LayerMask foragableLayer;
 
 
@@ -35,7 +37,6 @@ public class Animal : SerializedMonoBehaviour
     
 
     [Title("Debug")] [SerializeField] private Vector3 offset;
-    [SerializeField] private LayerMask obstacleMask;
     private void Start()
     {
         detectors = new List<Detector>();
@@ -47,7 +48,6 @@ public class Animal : SerializedMonoBehaviour
 
         InvokeRepeating(nameof(PerformDetection), 0, detectionDelay);
     }
-
     //Detector's stay on the animal, so they can be updated here
     private void PerformDetection()
     {
@@ -88,7 +88,7 @@ public class Animal : SerializedMonoBehaviour
     
     public void AddBehaviour(SteeringBehaviour behaviour)
     {
-        behaviour.OnStart(transform);
+        behaviour.OnStart(transform,ai);
         steeringBehaviours.Add(behaviour);
         
     }
@@ -105,4 +105,20 @@ public class Animal : SerializedMonoBehaviour
         detectors.Clear();
         steeringBehaviours.Clear();
     }
+
+
+
+    #region Editor Automatic Updates
+
+    public void ChangeAIData()
+    {
+        ai.sightRadius = animalInfo.sightRadius;
+        //Get the width of the collider bounds
+        var width = transform.GetComponent<CapsuleCollider>().bounds.size.x;
+        ai.colliderRadius = width / 2;
+        ai.targetReachThreshold = animalInfo.targetReachedThreshold;
+    }
+
+
+    #endregion
 }

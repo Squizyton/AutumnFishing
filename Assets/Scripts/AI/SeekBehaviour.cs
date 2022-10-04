@@ -2,15 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using AI;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class SeekBehaviour : SteeringBehaviour
 {
     [Title("Thresholds")]
-    //In case Agent has lost sight of target, we need to know where it was last seen. This will tell us if we are close enough
-    [SerializeField]
-    private float targetReachedThreshold = 0.3f;
+   
 
     private bool _reachedLastTarget = true;
 

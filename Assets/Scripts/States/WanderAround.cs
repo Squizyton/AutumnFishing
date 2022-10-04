@@ -54,10 +54,10 @@ public class WanderAround : State
         //If we are close enough to the target position, generate a new one
         if (!(Vector3.Distance(animal.transform.position,waypoint.position) < 0.1f)) return;
         //TODO: Don't do this. This is testing purposes only
-        Object.Destroy(waypoint);
-        waypoint = new GameObject().transform;
+        Object.Destroy(waypoint.gameObject);
+        var test = new GameObject().transform;
         waypoint.position = new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100));
-        animalAI.FeedTargets(new List<Transform>{waypoint});
+        animalAI.FeedTargets(new List<Transform>(){test});
     }   
 
 

@@ -19,11 +19,9 @@ public class AnimalSO : ScriptableObject
     
 
 
-
     [Title("Stats")] 
     public float walkSpeed;
     public float runSpeed;
-    
     
     [Title("AI")]
     //Radius is used to check for obstacles
@@ -31,7 +29,7 @@ public class AnimalSO : ScriptableObject
     //Avoid at all cost if distance is less than or equal to this value
     public float colliderRadius;
     //In case Agent has lost sight of target, we need to know where it was last seen. This will tell us if we are close enough
-    private float targetReachedThreshold = 0.5f;
+    public float targetReachedThreshold = 0.5f;
     
     
     [System.Serializable]
