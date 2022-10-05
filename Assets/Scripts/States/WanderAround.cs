@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AI;
 using ForagableMaterial;
+using Player;
 using States;
 using UnityEngine;
 
@@ -33,6 +34,8 @@ public class WanderAround : State
         contextSolver = new ContextSolver();
         
         animalAI.FeedTargets(new List<Transform>{waypoint});
+
+        animal.SetAnimState("walk");
     }
 
     public override void Update()
@@ -69,37 +72,42 @@ public class WanderAround : State
         
         for (var i = 0; i < numColliders; i++)
         {
-            if (hitColliders[i].gameObject.CompareTag("Food"))
+            if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
+            
+            hitColliders[i].TryGetComponent(out PickupableObject foundFood);
+                
+            if (animal.animalInfo.willEatAnything)
             {
-                hitColliders[i].TryGetComponent(out PickupableObject foundFood);
-                if (animal.animalInfo.willEatAnything)
-                {
-                    var weight = Random.Range(0, 1f);
+                var weight = Random.Range(0, 1f);
 
-                    if (weight < animal.animalInfo.stopWeight)
-                        //TODO: Change state to eating state
-                        return;
-                }
-
-                var favoriteFood = animal.animalInfo.foodItWillEat.FirstOrDefault(eatFood => eatFood.food == foundFood);
-
-                if (favoriteFood != null)
-                {
-                    var weightGenerated = Random.Range(0, 1f);
-
-                    if (weightGenerated < favoriteFood.weight)
-                    {
-                        //TODO: Switch State to eating state;
-                    }
-                }
+                if (weight < animal.animalInfo.stopWeight)
+                    animal.TransitionToState(new EatingState());
+                    return;
             }
 
-            if (hitColliders[i].gameObject.CompareTag("Player"))
+            var favoriteFood = animal.animalInfo.foodItWillEat.FirstOrDefault(eatFood => eatFood.food == foundFood.ReturnFlora());
+
+            if (favoriteFood != null)
             {
-                //Check if player is sprinting, if so, change state to runaway
-                
+
+                var multiplier = favoriteFood.isFavorite ? .5f : 0f;
+                    
+                var weightGenerated = Random.Range(0, 1f) * multiplier;
+
+                if (weightGenerated < favoriteFood.weight)
+                {
+                    animal.TransitionToState(new EatingState());
+                }
             }
         }
+        
+        
+        //Check distance from player
+        if (!(Vector3.Distance(animal.transform.position, PlayerMovement.Instance.GetPosition()) < 1.5f)) return;
+        
+        if(PlayerMovement.Instance.isSprinting)
+            Debug.Log("RUN AWAY AAAAAAH");
+        //animal.TransitionToState(new RunawayState());
     }
 
     public override void OnExit()
