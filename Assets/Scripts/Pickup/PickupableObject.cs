@@ -25,4 +25,10 @@ public abstract class PickupableObject : MonoBehaviour
             rb.AddForce(Random.insideUnitSphere * 10, ForceMode.Impulse);
         }
     }
+    
+    
+    public Vegetation ReturnFlora()
+    {
+        return flora;
+    }
 }
