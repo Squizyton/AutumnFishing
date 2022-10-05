@@ -36,6 +36,7 @@ public class AnimalSO : ScriptableObject
     public class EatFood
     {
         public Vegetation food;
+        public bool isFavorite;
         public float weight;
     }
 }
