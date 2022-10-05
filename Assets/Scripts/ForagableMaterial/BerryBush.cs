@@ -13,7 +13,7 @@ public class BerryBush : PickupableObject
 
     [SerializeField] private bool isPicked;
     [Title("Respawn Time")]
-    [SerializeField] private float respawnTime = 240f;
+    [SerializeField] private float respawnTime = 250f;
 
     
     
