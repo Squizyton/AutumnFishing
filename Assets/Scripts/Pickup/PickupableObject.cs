@@ -6,10 +6,15 @@ using UnityEngine;
 
 public abstract class PickupableObject : MonoBehaviour
 {
-    [SerializeField] private Vegetation flora;
-    [SerializeField] private Rigidbody rb;
-    
-    
+    [SerializeField] protected Vegetation flora;
+    [SerializeField] protected Rigidbody rb;
+
+
+    public virtual void OnEaten()
+    {
+        Destroy(gameObject);
+    }
+
     public virtual void OnPickup()
     {
         if(PlayerInventory.Instance.AddToInventory(flora))

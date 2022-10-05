@@ -71,7 +71,7 @@ public class WanderAround : State
         {
             if (hitColliders[i].gameObject.CompareTag("Food"))
             {
-                hitColliders[i].TryGetComponent(out Vegetation foundFood);
+                hitColliders[i].TryGetComponent(out PickupableObject foundFood);
                 if (animal.animalInfo.willEatAnything)
                 {
                     var weight = Random.Range(0, 1f);
