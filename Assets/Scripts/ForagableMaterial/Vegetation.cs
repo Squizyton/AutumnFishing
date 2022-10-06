@@ -7,8 +7,11 @@ namespace ForagableMaterial
     {
         //Material name
         public string materialName;
+        //The material itself
         public GameObject prefab;
-        public Sprite sprite;   
+        //Sprite for UI
+        public Sprite sprite;
+        //The amount of material that can be gathered
         public int maxStack;
     }
 }

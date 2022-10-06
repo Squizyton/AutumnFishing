@@ -13,7 +13,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Animal : SerializedMonoBehaviour
 {
     [Title("Transforms")] 
-    [SerializeField] private Transform _head;
+    public Transform head;
 
 
     [Title("AI")] [SerializeField] private AIData ai;

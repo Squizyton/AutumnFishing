@@ -1,123 +1,144 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AI;
-using ForagableMaterial;
 using Player;
-using States;
 using UnityEngine;
 
 
 //TODO: Add context steering
-public class WanderAround : State
+namespace States
 {
-    private Transform _transform;
-   
+    public class WanderAround : State
+    {
+        private Transform _transform;
+
+
     
-    
-    private AIData animalAI;
-    private ContextSolver contextSolver;
-    private Transform waypoint;
-    public override void OnInitialized(Animal passedAnimal, AIData passedAI)
-    {
-        animal = passedAnimal;
-        animalAI = passedAI;
-        _transform = animal.transform;
-        waypoint = new GameObject().transform;
-        waypoint.position = new Vector3(24.5f,0,91.7f);
-        
-        //Ai things
-        animal.AddDetector(new ObstacleDetector());
-        animal.AddDetector(new TargetDetector());
-        animal.AddBehaviour(new ObstacleAvoidanceBehaviour());
-        animal.AddBehaviour(new SeekBehaviour());
-        contextSolver = new ContextSolver();
-        
-        animalAI.FeedTargets(new List<Transform>{waypoint});
+        private ContextSolver contextSolver;
+        private Transform waypoint;
 
-        animal.SetAnimState("walk");
-    }
-
-    public override void Update()
-    {
-        CheckColliders();
-    }
-
-    public override void FixedUpdate()
-    { 
-     
-        
-        //Rotate it based on its forward vector
-        _transform.rotation = Quaternion.Slerp(_transform.rotation,Quaternion.LookRotation(_transform.forward + contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI)),Time.deltaTime * 5f);
-        
-        //Move towards the target position based on context solver
-        _transform.position += (_transform.forward + contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(),animalAI)) * (Time.deltaTime * animal.animalInfo.walkSpeed);
-        
-
-        //If we are close enough to the target position, generate a new one
-        if (!(Vector3.Distance(animal.transform.position,waypoint.position) < 0.1f)) return;
-      
-    }   
-
-
-
-    private void CheckColliders()
-    {
-        //Colision detection
-        const int maxColliders = 10;
-        var hitColliders = new Collider[maxColliders];
-        var numColliders = Physics.OverlapSphereNonAlloc(_transform.position, 0.5f, hitColliders, animal.foragableLayer);
-
-        if (!hitColliders[0]) return;
-        
-        for (var i = 0; i < numColliders; i++)
+        public override void OnInitialized(Animal passedAnimal, AIData passedAI)
         {
-            if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
+            animal = passedAnimal;
+            animalAI = passedAI;
+            _transform = animal.transform;
+            waypoint = new GameObject().transform;
+            waypoint.position = new Vector3(24.5f, 0, 91.7f);
+
+            //Ai things
+            animal.AddDetector(new ObstacleDetector());
+            animal.AddDetector(new TargetDetector());
+            animal.AddBehaviour(new ObstacleAvoidanceBehaviour());
+            animal.AddBehaviour(new SeekBehaviour());
+            contextSolver = new ContextSolver();
+
+            animalAI.FeedTargets(new List<Transform> {waypoint});
+
+            animal.SetAnimState("walk");
+        }
+
+        public override void Update()
+        {
+            CheckColliders();
+        }
+
+        public override void FixedUpdate()
+        {
+            //Rotate it based on its forward vector
+            _transform.rotation = Quaternion.Slerp(_transform.rotation,
+                Quaternion.LookRotation(_transform.forward +
+                                        contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(), animalAI)),
+                Time.deltaTime * 5f);
+
+            //Move towards the target position based on context solver
+            _transform.position +=
+                (_transform.forward + contextSolver.GetDirectionToMove(animal.GetSteeringBehaviours(), animalAI)) *
+                (Time.deltaTime * animal.animalInfo.walkSpeed);
+
+
+            //If we are close enough to the target position, generate a new one
+            if (!(Vector3.Distance(animal.transform.position, waypoint.position) < 0.1f)) return;
+        }
+
+
+        private void CheckColliders()
+        {
+            Debug.Log("aosdijfoiasjdoajsofhsdighiuaszdhfikhw");
             
-            hitColliders[i].TryGetComponent(out PickupableObject foundFood);
+            //Colision detection
+            const int maxColliders = 10;
+            //Create a hitColliders array based on the maxColliders
+            var hitColliders = new Collider[maxColliders];
+            //Get all the colliders that are within the radius of the animal using Overlap sphere
+            var numColliders =
+                Physics.OverlapSphereNonAlloc(_transform.position, animal.animalInfo.sightRadius, hitColliders, animal.foragableLayer);
+            
+            //Loop through all the colliders
+            for (var i = 0; i < numColliders; i++)
+            {
+                //If the collider is a foragable object
+                if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
+
                 
-            if (animal.animalInfo.willEatAnything)
-            {
-                var weight = Random.Range(0, 1f);
+        
+                //Get the foragable component
+                hitColliders[i].TryGetComponent(out PickupableObject foundFood);
 
-                if (weight < animal.animalInfo.stopWeight)
-                    animal.TransitionToState(new EatingState());
+                //If the animal will eat anything, 
+                if (animal.animalInfo.willEatAnything)
+                {
+                    //Generate a weight
+                    var weight = Random.Range(0, 1f);
+
+                    //If the weight is less than the animals stopWeight
+                    if (weight < animal.animalInfo.stopWeight)
+                        //Eat the food
+                        animal.TransitionToState(new EatingState(hitColliders[i].gameObject));
                     return;
-            }
+                }
 
-            var favoriteFood = animal.animalInfo.foodItWillEat.FirstOrDefault(eatFood => eatFood.food == foundFood.ReturnFlora());
+                //If the animal will only eat certain foods
+                var favoriteFood =
+                    animal.animalInfo.foodItWillEat.FirstOrDefault(eatFood => eatFood.food == foundFood.ReturnFlora());
 
-            if (favoriteFood != null)
-            {
+                //Check to see if the food in list
+                if (favoriteFood == null) continue;
+            
+                
+                
+                //If the food is marked as favorite, increase the multiplyer
+                var multiplier = favoriteFood.isFavorite ? 2f : 1f;
 
-                var multiplier = favoriteFood.isFavorite ? .5f : 0f;
-                    
+                //TODO: Add if Food was thrown by player, increase the multiplyer
+                
+                //generate a weight
                 var weightGenerated = Random.Range(0, 1f) * multiplier;
 
-                if (weightGenerated < favoriteFood.weight)
-                {
-                    animal.TransitionToState(new EatingState());
-                }
+                //If the weight is less than the food weight
+                if (!(weightGenerated < favoriteFood.weight)) continue;
+                
+                
+                animal.TransitionToState(new EatingState(hitColliders[i].gameObject));
             }
+
+
+            //Check distance from player
+            if (!(Vector3.Distance(animal.transform.position, PlayerMovement.Instance.GetPosition()) < 1.5f)) return;
+
+            if (PlayerMovement.Instance.isSprinting)
+                Debug.Log("RUN AWAY AAAAAAH");
+            //animal.TransitionToState(new RunawayState());
         }
-        
-        
-        //Check distance from player
-        if (!(Vector3.Distance(animal.transform.position, PlayerMovement.Instance.GetPosition()) < 1.5f)) return;
-        
-        if(PlayerMovement.Instance.isSprinting)
-            Debug.Log("RUN AWAY AAAAAAH");
-        //animal.TransitionToState(new RunawayState());
-    }
 
-    public override void OnExit()
-    {
-        animal.RemoveEverything();
-    }
+        public override void OnExit()
+        {
+            animal.RemoveEverything();
+        }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(_targetPosition, 0.5f);
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            //Gizmos.DrawWireSphere(_targetPosition, 0.5f);
+        }
     }
 }
