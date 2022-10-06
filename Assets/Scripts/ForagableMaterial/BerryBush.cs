@@ -10,8 +10,6 @@ public class BerryBush : PickupableObject
 
     [Title("The Berries")]
     [SerializeField] private GameObject berries;
-
-    [SerializeField] private bool isPicked;
     [Title("Respawn Time")]
     [SerializeField] private float respawnTime = 250f;
 
@@ -24,6 +22,8 @@ public class BerryBush : PickupableObject
         {
             Regrow(respawnTime);
         });
+        
+        isPicked = true;
         
         await Task.WhenAll(task);
         
@@ -48,7 +48,7 @@ public class BerryBush : PickupableObject
             //Shake Animation
         }
     }
-
+    
 
     private async void Regrow(float duration)
     {
@@ -62,5 +62,10 @@ public class BerryBush : PickupableObject
         berries.SetActive(true);
         isPicked = false;
         Debug.Log("Berries have respawned");
+    }
+    
+    public bool ReturnStatus()
+    {
+        return isPicked;
     }
 }

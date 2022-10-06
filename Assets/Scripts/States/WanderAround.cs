@@ -17,6 +17,8 @@ namespace States
         private ContextSolver contextSolver;
         private Transform waypoint;
 
+        private Collider[] cachedColliders;
+
         public override void OnInitialized(Animal passedAnimal, AIData passedAI)
         {
             animal = passedAnimal;
@@ -63,8 +65,6 @@ namespace States
 
         private void CheckColliders()
         {
-            Debug.Log("aosdijfoiasjdoajsofhsdighiuaszdhfikhw");
-            
             //Colision detection
             const int maxColliders = 10;
             //Create a hitColliders array based on the maxColliders
@@ -72,7 +72,12 @@ namespace States
             //Get all the colliders that are within the radius of the animal using Overlap sphere
             var numColliders =
                 Physics.OverlapSphereNonAlloc(_transform.position, animal.animalInfo.sightRadius, hitColliders, animal.foragableLayer);
+
+            if (cachedColliders == hitColliders) return;
             
+            
+            
+            cachedColliders = hitColliders;
             //Loop through all the colliders
             for (var i = 0; i < numColliders; i++)
             {
@@ -84,6 +89,9 @@ namespace States
                 //Get the foragable component
                 hitColliders[i].TryGetComponent(out PickupableObject foundFood);
 
+
+                if (foundFood.IsPicked()) return;
+                
                 //If the animal will eat anything, 
                 if (animal.animalInfo.willEatAnything)
                 {
@@ -93,7 +101,7 @@ namespace States
                     //If the weight is less than the animals stopWeight
                     if (weight < animal.animalInfo.stopWeight)
                         //Eat the food
-                        animal.TransitionToState(new EatingState(hitColliders[i].gameObject));
+                        animal.TransitionToState(new EatingState(hitColliders[i].gameObject,foundFood));
                     return;
                 }
 
@@ -114,11 +122,12 @@ namespace States
                 //generate a weight
                 var weightGenerated = Random.Range(0, 1f) * multiplier;
 
+                Debug.Log(weightGenerated);
                 //If the weight is less than the food weight
-                if (!(weightGenerated < favoriteFood.weight)) continue;
+                if (!(weightGenerated > favoriteFood.weight)) continue;
                 
                 
-                animal.TransitionToState(new EatingState(hitColliders[i].gameObject));
+                animal.TransitionToState(new EatingState(hitColliders[i].gameObject,foundFood));
             }
 
 

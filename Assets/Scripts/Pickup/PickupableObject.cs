@@ -8,7 +8,7 @@ public abstract class PickupableObject : MonoBehaviour
 {
     [SerializeField] protected Vegetation flora;
     [SerializeField] protected Rigidbody rb;
-
+    [SerializeField] protected bool isPicked;
 
     public virtual void OnEaten()
     {
@@ -25,8 +25,12 @@ public abstract class PickupableObject : MonoBehaviour
             rb.AddForce(Random.insideUnitSphere * 10, ForceMode.Impulse);
         }
     }
-    
-    
+
+    public bool IsPicked()
+    {
+        return isPicked;
+    }
+
     public Vegetation ReturnFlora()
     {
         return flora;
