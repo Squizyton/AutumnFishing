@@ -33,7 +33,9 @@ public class Animal : SerializedMonoBehaviour
 
     [Title("Stats")] 
     [SerializeField] private float happiness;
-
+    [SerializeField,ReadOnly] private float hunger;
+    private float _hungerTick = 0.1f;
+    
     [Title("States")] 
     [ReadOnly,SerializeField] private State currentState;
 
@@ -67,6 +69,11 @@ public class Animal : SerializedMonoBehaviour
     public void Update()
     {
         currentState?.Update();
+        
+        if(hunger > 0 && hunger != 100f)
+            hunger += _hungerTick * Time.deltaTime;
+        
+        
     }
     //Fixed update for physics
     public void FixedUpdate()

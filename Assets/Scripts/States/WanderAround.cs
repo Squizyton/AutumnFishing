@@ -111,7 +111,6 @@ namespace States
 
                 //Check to see if the food in list
                 if (favoriteFood == null) continue;
-            
                 
                 
                 //If the food is marked as favorite, increase the multiplyer
