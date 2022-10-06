@@ -124,10 +124,8 @@ namespace States
 
                 Debug.Log(weightGenerated);
                 //If the weight is less than the food weight
-                if (!(weightGenerated > favoriteFood.weight)) continue;
-                
-                
-                animal.TransitionToState(new EatingState(hitColliders[i].gameObject,foundFood));
+                if (weightGenerated < favoriteFood.weight)
+                    animal.TransitionToState(new EatingState(hitColliders[i].gameObject,foundFood));
             }
 
 
