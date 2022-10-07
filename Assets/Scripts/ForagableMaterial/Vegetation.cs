@@ -13,5 +13,8 @@ namespace ForagableMaterial
         public Sprite sprite;
         //The amount of material that can be gathered
         public int maxStack;
+        
+        //Fullness of the material
+        public float fullness;
     }
 }
