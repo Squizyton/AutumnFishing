@@ -63,6 +63,7 @@ public class EatingState : State
         }
 
         _food.OnEaten();
+        animal.hunger -= _food.ReturnFlora().fullness;
         animal.TransitionToState(new WanderAround());
     }
 

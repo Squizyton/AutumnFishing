@@ -16,9 +16,12 @@ namespace States
     
         private ContextSolver contextSolver;
         private Transform waypoint;
-
+        
         private Collider[] cachedColliders;
-
+        
+        private PickupableObject[] foodFoundNotEaten;
+        private int removeRateTime = 30;
+        private int timer = 0;
         public override void OnInitialized(Animal passedAnimal, AIData passedAI)
         {
             animal = passedAnimal;
@@ -42,6 +45,12 @@ namespace States
         public override void Update()
         {
             CheckColliders();
+
+
+            if (timer > 0)
+            {
+                
+            }
         }
 
         public override void FixedUpdate()
@@ -72,25 +81,18 @@ namespace States
             //Get all the colliders that are within the radius of the animal using Overlap sphere
             var numColliders =
                 Physics.OverlapSphereNonAlloc(_transform.position, animal.animalInfo.sightRadius, hitColliders, animal.foragableLayer);
-
-            if (cachedColliders == hitColliders) return;
             
-            
-            
-            cachedColliders = hitColliders;
             //Loop through all the colliders
             for (var i = 0; i < numColliders; i++)
             {
                 //If the collider is a foragable object
                 if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
-
                 
-        
                 //Get the foragable component
                 hitColliders[i].TryGetComponent(out PickupableObject foundFood);
 
 
-                if (foundFood.IsPicked()) return;
+                if (foundFood.IsPicked() || foodFoundNotEaten.Contains(foundFood)) return;
                 
                 //If the animal will eat anything, 
                 if (animal.animalInfo.willEatAnything)
@@ -121,10 +123,23 @@ namespace States
                 //generate a weight
                 var weightGenerated = Random.Range(0, 1f) * multiplier;
 
-                Debug.Log(weightGenerated);
+
+                //The more full the animal is, the less likely it is to eat
+                //Lower the number, the less likely it is to eat
+                weightGenerated += animal.hunger / 100f;
+                
+                
                 //If the weight is less than the food weight
                 if (weightGenerated < favoriteFood.weight)
                     animal.TransitionToState(new EatingState(hitColliders[i].gameObject,foundFood));
+                //If we decided not to eat it, add it to the list of food we found but didn't eat
+                else
+                {
+                    if(foodFoundNotEaten.Length <= 0)
+                        timer = removeRateTime;
+                    
+                    foodFoundNotEaten.ToList().Add(foundFood);
+                }
             }
 
 
@@ -141,6 +156,16 @@ namespace States
             animal.RemoveEverything();
         }
 
+        
+        public void RemoveRandomFood()
+        {
+            foodFoundNotEaten.ToList().RemoveAt(Random.Range(0, foodFoundNotEaten.Length));
+        }
+        
+        
+        
+        
+        
         void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
