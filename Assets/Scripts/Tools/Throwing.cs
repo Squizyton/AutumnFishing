@@ -82,11 +82,13 @@ namespace Tools
         public override void OnEquip()
         {
             UIManager.Instance.SetMaxFishingSlider(maxThrowForce);
+            
+            SwitchObject(currentIndex);
         }
 
         public override void OnUnequip()
         {
-        
+            Destroy(currentLitterObject);
         }
 
         public override void OnLeftClick()
