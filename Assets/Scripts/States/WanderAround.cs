@@ -101,16 +101,8 @@ namespace States
                 
                 //If the collider is a foragable object
                 if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
-                
-                Debug.Log(hitColliders[i].gameObject.name);
-                
-                
-                
-                
                 //Get the foragable component
                 hitColliders[i].TryGetComponent(out PickupableObject foundFood);
-
-                
 
                 if (foundFood.IsPicked() || foodFoundNotEaten.Contains(foundFood)) return;
                 
