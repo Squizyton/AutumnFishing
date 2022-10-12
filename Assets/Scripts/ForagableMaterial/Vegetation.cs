@@ -1,9 +1,10 @@
+using Interface;
 using UnityEngine;
 
 namespace ForagableMaterial
 {
     [CreateAssetMenu(menuName = "New Fauna", fileName = "New Fauna")]
-    public class Vegetation : ScriptableObject
+    public class Vegetation : ScriptableObject, IPicturable
     {
         //Material name
         public string materialName;
@@ -16,5 +17,9 @@ namespace ForagableMaterial
         
         //Fullness of the material
         public float fullness;
+        public string ReturnName()
+        {
+            return materialName;
+        }
     }
 }
