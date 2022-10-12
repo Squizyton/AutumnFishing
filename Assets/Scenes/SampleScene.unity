@@ -72965,7 +72965,7 @@ MonoBehaviour:
   litterRb: {fileID: 0}
   currentThrowForce: 0
   currentIndex: 0
-  maxThrowForce: 2
+  maxThrowForce: 1
   isCharging: 0
   throwAngle: 45
 --- !u!1 &2004342369
