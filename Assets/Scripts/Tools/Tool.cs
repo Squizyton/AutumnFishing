@@ -10,5 +10,6 @@ namespace Tools
         public abstract void OnLeftClick();
         public abstract void OnLetGo();
         public abstract void OnRightClick();
+        public abstract void OnRightClickLetGo();
     }
 }
