@@ -102,7 +102,7 @@ namespace States
                 //If the collider is a foragable object
                 if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
                 
-                Debug.Log(hitColliders[i].gameObject.name);
+                    //Debug.Log(hitColliders[i].gameObject.name);
                 
                 
                 
@@ -149,7 +149,7 @@ namespace States
                 weightGenerated -= animal.hunger / 100f;
                 
                 
-                Debug.Log(weightGenerated);
+                //Debug.Log(weightGenerated);
                 
                 //If the weight is less than the food weight
                 if (weightGenerated < favoriteFood.weight)

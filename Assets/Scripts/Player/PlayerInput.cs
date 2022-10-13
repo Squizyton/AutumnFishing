@@ -21,6 +21,8 @@ public class PlayerInput : MonoBehaviour
             PlayerInventory.Instance.SwitchTool(0);
         if(Input.GetKeyDown(KeyCode.Alpha2))
             PlayerInventory.Instance.SwitchTool(1);
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+           PlayerInventory.Instance.SwitchTool(2);
 
 
         if (!PlayerInventory.Instance.currentTool) return;

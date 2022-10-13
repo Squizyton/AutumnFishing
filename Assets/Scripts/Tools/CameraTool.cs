@@ -43,7 +43,8 @@ namespace Tools
         
         private void ChangeFOV(float fov)
         {
-            cameraCamera.m_Lens.FieldOfView += Mathf.Clamp(cameraCamera.m_Lens.FieldOfView, 20,90);
+            var clamp = Mathf.Clamp(cameraCamera.m_Lens.FieldOfView += fov, 30, 90);
+            cameraCamera.m_Lens.FieldOfView = clamp;
         }
 
         public override void OnRightClick()
