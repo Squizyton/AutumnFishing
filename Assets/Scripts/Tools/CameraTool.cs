@@ -9,8 +9,8 @@ namespace Tools
     {
         [SerializeField]private CinemachineVirtualCamera cameraCamera;
         [SerializeField]private bool isAiming;
-        
-        
+
+        [SerializeField] public float previousFOV;
         public override void OnEquip()
         {
             cameraCamera.Priority = 65;
@@ -53,16 +53,14 @@ namespace Tools
         public override void OnRightClick()
         {
             UIManager.Instance.CameraUISwitch(true);
-            
+            cameraCamera.m_Lens.FieldOfView = previousFOV;
             isAiming = true;
-            
-            
         }
 
         public override void OnRightClickLetGo()
         {
             UIManager.Instance.CameraUISwitch(false);
-            cameraCamera.Priority = 0;
+            previousFOV = cameraCamera.m_Lens.FieldOfView;
             cameraCamera.m_Lens.FieldOfView = 60;
             isAiming = false;
         }

@@ -1,18 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ConvertTimeToString : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI timeText;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+     timeText.SetText(DateTime.UtcNow.ToString("HH:mm:ss"));
     }
 }

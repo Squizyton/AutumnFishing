@@ -14,12 +14,20 @@ namespace UI
         //[SerializeField] private float crosshairSize = 10f;
         [SerializeField] private Sprite originalCrosshair;
         [SerializeField] private Sprite pickupCrosshair;
-
+    
+        
+        
+        
+        
         [Title("Fishing Variables")] [SerializeField]
         private Slider fishingSlider;
 
         [SerializeField] private CanvasGroup fishingCanvasGroup;
 
+        [Title("Camera Variables")]
+        [SerializeField]private CanvasGroup cameraCanvasGroup;
+        
+        
         public void UpdateFishingSlider(float value)
         {
             fishingSlider.value = value;
@@ -54,7 +62,7 @@ namespace UI
         
         public void CameraUISwitch(bool value)
         {
-            crosshair.gameObject.SetActive(value);
+          cameraCanvasGroup.alpha = value ? 1 : 0;
         }
         
     }
