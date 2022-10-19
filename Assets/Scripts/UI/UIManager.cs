@@ -50,5 +50,12 @@ namespace UI
             crosshair.gameObject.transform.localScale = new Vector3(size, size, 1);
             crosshair.sprite = sprite;
         }
+        
+        
+        public void CameraUISwitch(bool value)
+        {
+            crosshair.gameObject.SetActive(value);
+        }
+        
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using UI;
 using UnityEngine;
 
 namespace Tools
@@ -33,7 +34,9 @@ namespace Tools
 
         public override void OnLeftClick()
         {
-       
+            if (!isAiming) return;
+            
+            
         }
 
         public override void OnLetGo()
@@ -49,11 +52,18 @@ namespace Tools
 
         public override void OnRightClick()
         {
+            UIManager.Instance.CameraUISwitch(true);
+            
             isAiming = true;
+            
+            
         }
 
         public override void OnRightClickLetGo()
         {
+            UIManager.Instance.CameraUISwitch(false);
+            cameraCamera.Priority = 0;
+            cameraCamera.m_Lens.FieldOfView = 60;
             isAiming = false;
         }
     }
