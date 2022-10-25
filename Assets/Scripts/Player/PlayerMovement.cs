@@ -48,6 +48,8 @@ namespace Player
 
       private void Movement()
       {
+         if (state == State.canNotMove) return;
+         
          //If the player is actually moving
          if(axis != Vector3.zero)
          {
