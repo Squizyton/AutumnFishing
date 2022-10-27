@@ -15,6 +15,9 @@ public class PlayerInput : MonoBehaviour
     public void Update()
     {
 
+
+        if (PlayerMovement.Instance.GetState() == PlayerMovement.State.canNotMove) return;
+        
         Raycasting();
         
         if(Input.GetKeyDown(KeyCode.Alpha1))

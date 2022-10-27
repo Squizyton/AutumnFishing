@@ -1,4 +1,6 @@
+using System;
 using System.Drawing;
+using System.IO;
 using Singleton;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -28,6 +30,22 @@ namespace UI
         [SerializeField]private CanvasGroup cameraCanvasGroup;
         
         
+        [Title("Photo View Variables")]
+        [SerializeField]private CanvasGroup photoViewCanvasGroup;
+        [SerializeField] private Image photoViewImage;
+        private int screenWidth,screenHeight;
+
+        private void Start()
+        {
+            screenHeight = 1080;
+            screenWidth = 1920;
+
+#if !UNITY_EDITOR
+            screenWidth = Screen.width;
+            screenHeight = Screen.height;
+#endif
+        }
+
         public void UpdateFishingSlider(float value)
         {
             fishingSlider.value = value;
@@ -64,6 +82,41 @@ namespace UI
         {
           cameraCanvasGroup.alpha = value ? 1 : 0;
         }
-        
+
+        public void SetPicture(Texture2D image)
+        {
+            photoViewCanvasGroup.alpha = 1;
+            
+            var rectTransform = (RectTransform) photoViewImage.transform;
+
+            var croppedImage = new Texture2D(450,380);
+            
+            //loop through the pixels of the image near the center
+            for (var x = 550 ; x < 1200; x++)
+            {
+                for (var y = 380; y < 760; y++)
+                {
+                    //get the pixel from the image
+                    var pixel = image.GetPixel(x, y);
+                    //set the pixel in the cropped image
+                    croppedImage.SetPixel(x, y, pixel);
+                }
+            }
+
+            
+            var croppedBytes = croppedImage.EncodeToPNG();
+            var normalBytes = image.EncodeToPNG();
+            var dirPath = Application.dataPath + "/SaveImages/";
+            Debug.Log(dirPath);
+            if(!Directory.Exists(dirPath)) {
+                Directory.CreateDirectory(dirPath);
+            }
+            File.WriteAllBytes(dirPath + "CroppedImage" + ".png", croppedBytes);
+            File.WriteAllBytes(dirPath + "NormalImage" + ".png", normalBytes);
+            //var sprite = Sprite.Create(croppedImage, new Rect(0, 0,200,200), new Vector2(0.5f, 0.5f));
+            
+            //photoViewImage.sprite = sprite;
+        }
+
     }
 }

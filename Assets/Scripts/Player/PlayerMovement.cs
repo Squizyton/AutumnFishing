@@ -27,6 +27,8 @@ namespace Player
 
       private void Update()
       {
+         
+         
          axis = state switch
          {
             State.canMove => new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized,
@@ -71,7 +73,18 @@ namespace Player
       }
 
 
-      private enum State
+      public void SetState(int state)
+      {
+         this.state = (State) state;
+      }
+      
+      
+      public State GetState()
+      {
+         return state;
+      }
+      
+      public enum State
       {
          canMove,
          canNotMove

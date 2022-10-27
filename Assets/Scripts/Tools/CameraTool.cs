@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using Player;
 using UI;
 using UnityEngine;
 
@@ -11,6 +12,12 @@ namespace Tools
         [SerializeField]private bool isAiming;
 
         [SerializeField] public float previousFOV;
+
+        private void Start()
+        {
+            previousFOV = cameraCamera.m_Lens.FieldOfView;
+        }
+
         public override void OnEquip()
         {
             cameraCamera.Priority = 65;
@@ -35,13 +42,16 @@ namespace Tools
         public override void OnLeftClick()
         {
             if (!isAiming) return;
-            
-            
+
+            var image = CreateRenderTexture.RTImage();
+            PlayerMovement.Instance.SetState(1);
+
+            UIManager.Instance.SetPicture(image);
         }
 
         public override void OnLetGo()
         {
-       
+            OnRightClickLetGo();
         }
         
         private void ChangeFOV(float fov)
