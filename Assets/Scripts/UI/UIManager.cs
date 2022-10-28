@@ -89,9 +89,6 @@ namespace UI
         public void SetPicture(Texture2D image)
         {
             photoViewCanvasGroup.alpha = 1;
-            
-            var rectTransform = (RectTransform) photoViewImage.transform;
-
             var croppedImage = new Texture2D(450,380);
             
             //loop through the pixels of the image near the center
