@@ -1,10 +1,13 @@
 using System;
 using System.Drawing;
 using System.IO;
+using System.Numerics;
+using Player;
 using Singleton;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using Vector3 = UnityEngine.Vector3;
 
 namespace UI
 {
@@ -92,18 +95,24 @@ namespace UI
             var croppedImage = new Texture2D(450,380);
             
             //loop through the pixels of the image near the center
-            for (var x = 550 ; x < 1200; x++)
+            for (var x = 0 ; x < croppedImage.width; x++)
             {
-                for (var y = 380; y < 760; y++)
+                var offsetX = x + 70;
+                for (var y = 0; y < croppedImage.height; y++)
                 {
+                    var offsetY = y + 380;
                     //get the pixel from the image
-                    var pixel = image.GetPixel(x, y);
+                    var pixel = image.GetPixel(offsetX, offsetY);
                     //set the pixel in the cropped image
                     croppedImage.SetPixel(x, y, pixel);
                 }
             }
 
             
+            croppedImage.Apply();
+            
+            
+            //DEBUG (FOR NOW)---------------------------
             var croppedBytes = croppedImage.EncodeToPNG();
             var normalBytes = image.EncodeToPNG();
             var dirPath = Application.dataPath + "/SaveImages/";
@@ -113,9 +122,22 @@ namespace UI
             }
             File.WriteAllBytes(dirPath + "CroppedImage" + ".png", croppedBytes);
             File.WriteAllBytes(dirPath + "NormalImage" + ".png", normalBytes);
-            //var sprite = Sprite.Create(croppedImage, new Rect(0, 0,200,200), new Vector2(0.5f, 0.5f));
+            //-------------------------------
             
-            //photoViewImage.sprite = sprite;
+            
+            var sprite = Sprite.Create(croppedImage, new Rect(0, 0,450,380),Vector3.zero);
+            
+            photoViewImage.sprite = sprite;
+            
+            PlayerInput.Instance.SetOverridenRightClickAction(() =>
+            {
+                photoViewImage.sprite = null;
+                photoViewCanvasGroup.alpha = 0;
+                PlayerMovement.Instance.SetState(0);
+                Cursor.lockState = CursorLockMode.Locked;
+            });
+            
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }

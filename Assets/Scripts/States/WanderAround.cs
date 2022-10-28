@@ -197,7 +197,7 @@ namespace States
             //Check distance from cached colliders
             for (var i = 0; i < cachedColliders.Length; i++)
             {
-                if (cachedColliders[i] == null) continue;
+                if (!cachedColliders[i]) continue;
                 
                 if (!(Vector3.Distance(animal.transform.position, cachedColliders[i].transform.position) <  animal.animalInfo.sightRadius)) continue;
                 
