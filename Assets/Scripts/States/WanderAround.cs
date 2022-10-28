@@ -101,8 +101,16 @@ namespace States
                 
                 //If the collider is a foragable object
                 if (!hitColliders[i].gameObject.CompareTag("Food")) continue;
+                
+                    //Debug.Log(hitColliders[i].gameObject.name);
+                
+                
+                
+                
                 //Get the foragable component
                 hitColliders[i].TryGetComponent(out PickupableObject foundFood);
+
+                
 
                 if (foundFood.IsPicked() || foodFoundNotEaten.Contains(foundFood)) return;
                 
@@ -141,7 +149,7 @@ namespace States
                 weightGenerated -= animal.hunger / 100f;
                 
                 
-                Debug.Log(weightGenerated);
+                //Debug.Log(weightGenerated);
                 
                 //If the weight is less than the food weight
                 if (weightGenerated < favoriteFood.weight)
@@ -189,7 +197,7 @@ namespace States
             //Check distance from cached colliders
             for (var i = 0; i < cachedColliders.Length; i++)
             {
-                if (cachedColliders[i] == null) continue;
+                if (!cachedColliders[i]) continue;
                 
                 if (!(Vector3.Distance(animal.transform.position, cachedColliders[i].transform.position) <  animal.animalInfo.sightRadius)) continue;
                 

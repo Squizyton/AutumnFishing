@@ -65,9 +65,6 @@ namespace Tools
            
             
             currentItem = PlayerInventory.Instance.foragableMaterials.Values.ToList().ElementAt(currentIndex);
-
-            if (currentItem.amount <= 0) return;
-            
             if(currentLitterObject)
              Destroy(currentLitterObject);
             
@@ -85,18 +82,16 @@ namespace Tools
         public override void OnEquip()
         {
             UIManager.Instance.SetMaxFishingSlider(maxThrowForce);
-            
-            SwitchObject(currentIndex);
         }
 
         public override void OnUnequip()
         {
-            Destroy(currentLitterObject);
+        
         }
 
         public override void OnLeftClick()
         {
-            if (!isCharging && currentLitterObject)
+            if (!isCharging)
             {
                 lastCoroutine = StartCoroutine(StartChargingCooldown());
             }
@@ -137,29 +132,22 @@ namespace Tools
 
         }
         
-        private void ThrowThing()
+        void ThrowThing()
         {
             currentLitterObject.transform.parent = null;
             litterRb.isKinematic = false;
             
             var rotation = Quaternion.Euler(0,0,throwAngle);
             
-            litterRb.AddForce(transform.forward * (throwAngle * currentThrowForce), ForceMode.Impulse);
-            
-            currentItem.IsThrown(true);
-            
-
-            currentLitterObject = null;
-            isCharging = false;
-
-            PlayerInventory.Instance.RemoveFromInventory(currentItem.vegetation, 1);
-            UIManager.Instance.SetFishingSliderActive(false);
-            
-            SwitchObject(currentIndex);
+            litterRb.AddForce(Vector3.up * (throwAngle * currentThrowForce), ForceMode.Impulse);
         }
+        
         public override void OnRightClick()
         {
-            throw new System.NotImplementedException();
+        }
+
+        public override void OnRightClickLetGo()
+        {
         }
     }
 }

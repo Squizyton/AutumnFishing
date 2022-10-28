@@ -1,0 +1,941 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c789d55c4f1cff34799abba03737e8f7, type: 3}
+  m_Name: ftGlobalStorage
+  m_EditorClassIdentifier: 
+  modifiedAssetPathList:
+  - Assets/Bakery/examples/content/sponza/sponza.FBX
+  modifiedAssetPaddingHash: aaf8cc2e
+  modifiedMeshList: []
+  modifiedMeshPaddingList: 
+  modifiedAssets:
+  - meshName:
+    - sponza_00
+    - sponza_01
+    - sponza_03
+    - sponza_05
+    - sponza_06
+    - sponza_07
+    - sponza_08
+    - sponza_09
+    - sponza_10
+    - sponza_11
+    - sponza_12
+    - sponza_13
+    - sponza_14
+    - sponza_15
+    - sponza_16
+    - sponza_17
+    - sponza_18
+    - sponza_19
+    - sponza_20
+    - sponza_21
+    - sponza_22
+    - sponza_23
+    - sponza_24
+    - sponza_25
+    - sponza_26
+    - sponza_27
+    - sponza_28
+    - sponza_29
+    - sponza_30
+    - sponza_31
+    - sponza_32
+    - sponza_33
+    - sponza_34
+    - sponza_35
+    - sponza_36
+    - sponza_37
+    - sponza_38
+    - sponza_39
+    - sponza_40
+    - sponza_41
+    - sponza_42
+    - sponza_43
+    - sponza_44
+    - sponza_45
+    - sponza_46
+    - sponza_47
+    - sponza_48
+    - sponza_49
+    - sponza_50
+    - sponza_51
+    - sponza_52
+    - sponza_53
+    - sponza_54
+    - sponza_55
+    - sponza_56
+    - sponza_57
+    - sponza_58
+    - sponza_59
+    - sponza_60
+    - sponza_61
+    - sponza_62
+    - sponza_63
+    - sponza_64
+    - sponza_65
+    - sponza_67
+    - sponza_68
+    - sponza_69
+    - sponza_70
+    - sponza_71
+    - sponza_72
+    - sponza_73
+    - sponza_74
+    - sponza_75
+    - sponza_76
+    - sponza_77
+    - sponza_78
+    - sponza_79
+    - sponza_80
+    - sponza_81
+    - sponza_82
+    - sponza_83
+    - sponza_84
+    - sponza_85
+    - sponza_86
+    - sponza_87
+    - sponza_88
+    - sponza_89
+    - sponza_90
+    - sponza_91
+    - sponza_92
+    - sponza_93
+    - sponza_94
+    - sponza_95
+    - sponza_96
+    - sponza_97
+    - sponza_98
+    - sponza_99
+    - sponza_100
+    - sponza_101
+    - sponza_102
+    - sponza_103
+    - sponza_104
+    - sponza_105
+    - sponza_106
+    - sponza_107
+    - sponza_108
+    - sponza_109
+    - sponza_110
+    - sponza_111
+    - sponza_112
+    - sponza_113
+    - sponza_114
+    - sponza_115
+    - sponza_116
+    - sponza_117
+    - sponza_118
+    - sponza_119
+    - sponza_120
+    - sponza_121
+    - sponza_122
+    - sponza_123
+    - sponza_124
+    - sponza_125
+    - sponza_126
+    - sponza_127
+    - sponza_128
+    - sponza_129
+    - sponza_130
+    - sponza_131
+    - sponza_132
+    - sponza_133
+    - sponza_134
+    - sponza_135
+    - sponza_136
+    - sponza_137
+    - sponza_138
+    - sponza_139
+    - sponza_140
+    - sponza_141
+    - sponza_142
+    - sponza_143
+    - sponza_144
+    - sponza_145
+    - sponza_146
+    - sponza_147
+    - sponza_148
+    - sponza_149
+    - sponza_150
+    - sponza_151
+    - sponza_152
+    - sponza_153
+    - sponza_154
+    - sponza_155
+    - sponza_156
+    - sponza_157
+    - sponza_158
+    - sponza_159
+    - sponza_160
+    - sponza_161
+    - sponza_162
+    - sponza_163
+    - sponza_164
+    - sponza_165
+    - sponza_166
+    - sponza_167
+    - sponza_168
+    - sponza_169
+    - sponza_170
+    - sponza_171
+    - sponza_172
+    - sponza_173
+    - sponza_174
+    - sponza_175
+    - sponza_176
+    - sponza_177
+    - sponza_178
+    - sponza_179
+    - sponza_180
+    - sponza_181
+    - sponza_182
+    - sponza_183
+    - sponza_184
+    - sponza_185
+    - sponza_186
+    - sponza_187
+    - sponza_188
+    - sponza_189
+    - sponza_190
+    - sponza_191
+    - sponza_192
+    - sponza_193
+    - sponza_194
+    - sponza_195
+    - sponza_196
+    - sponza_197
+    - sponza_198
+    - sponza_199
+    - sponza_200
+    - sponza_201
+    - sponza_202
+    - sponza_203
+    - sponza_204
+    - sponza_205
+    - sponza_206
+    - sponza_207
+    - sponza_208
+    - sponza_209
+    - sponza_210
+    - sponza_211
+    - sponza_212
+    - sponza_213
+    - sponza_214
+    - sponza_215
+    - sponza_216
+    - sponza_217
+    - sponza_218
+    - sponza_219
+    - sponza_220
+    - sponza_221
+    - sponza_222
+    - sponza_223
+    - sponza_224
+    - sponza_225
+    - sponza_226
+    - sponza_227
+    - sponza_228
+    - sponza_229
+    - sponza_230
+    - sponza_231
+    - sponza_232
+    - sponza_233
+    - sponza_234
+    - sponza_235
+    - sponza_236
+    - sponza_237
+    - sponza_238
+    - sponza_239
+    - sponza_240
+    - sponza_241
+    - sponza_242
+    - sponza_243
+    - sponza_244
+    - sponza_245
+    - sponza_246
+    - sponza_247
+    - sponza_248
+    - sponza_249
+    - sponza_250
+    - sponza_251
+    - sponza_252
+    - sponza_253
+    - sponza_254
+    - sponza_255
+    - sponza_256
+    - sponza_257
+    - sponza_259
+    - sponza_260
+    - sponza_261
+    - sponza_262
+    - sponza_263
+    - sponza_264
+    - sponza_265
+    - sponza_266
+    - sponza_267
+    - sponza_268
+    - sponza_269
+    - sponza_270
+    - sponza_271
+    - sponza_272
+    - sponza_273
+    - sponza_274
+    - sponza_275
+    - sponza_276
+    - sponza_277
+    - sponza_278
+    - sponza_279
+    - sponza_280
+    - sponza_281
+    - sponza_282
+    - sponza_283
+    - sponza_284
+    - sponza_285
+    - sponza_286
+    - sponza_287
+    - sponza_288
+    - sponza_289
+    - sponza_290
+    - sponza_291
+    - sponza_292
+    - sponza_293
+    - sponza_294
+    - sponza_295
+    - sponza_296
+    - sponza_297
+    - sponza_298
+    - sponza_299
+    - sponza_300
+    - sponza_301
+    - sponza_302
+    - sponza_303
+    - sponza_304
+    - sponza_305
+    - sponza_306
+    - sponza_307
+    - sponza_308
+    - sponza_309
+    - sponza_310
+    - sponza_311
+    - sponza_312
+    - sponza_313
+    - sponza_314
+    - sponza_315
+    - sponza_316
+    - sponza_317
+    - sponza_318
+    - sponza_319
+    - sponza_320
+    - sponza_321
+    - sponza_322
+    - sponza_323
+    - sponza_324
+    - sponza_325
+    - sponza_326
+    - sponza_327
+    - sponza_328
+    - sponza_329
+    - sponza_330
+    - sponza_331
+    - sponza_332
+    - sponza_333
+    - sponza_334
+    - sponza_335
+    - sponza_336
+    - sponza_337
+    - sponza_338
+    - sponza_339
+    - sponza_340
+    - sponza_341
+    - sponza_342
+    - sponza_343
+    - sponza_344
+    - sponza_345
+    - sponza_346
+    - sponza_347
+    - sponza_348
+    - sponza_349
+    - sponza_350
+    - sponza_351
+    - sponza_352
+    - sponza_353
+    - sponza_354
+    - sponza_355
+    - sponza_356
+    - sponza_357
+    - sponza_358
+    - sponza_359
+    - sponza_360
+    - sponza_361
+    - sponza_362
+    - sponza_363
+    - sponza_364
+    - sponza_365
+    - sponza_366
+    - sponza_367
+    - sponza_368
+    - sponza_369
+    - sponza_370
+    - sponza_371
+    - sponza_372
+    - sponza_373
+    - sponza_374
+    - sponza_375
+    - sponza_376
+    - sponza_377
+    - sponza_378
+    - sponza_381
+    padding: 2e000000460000002a000000110000000e0000000c0000000400000033000000330000003300000033000000330000003300000033000000330000000a00000007000000060000002b0000002b00000011000000140000001400000014000000140000002a0000001d000000320000003200000032000000320000002a000000080000000d0000000500000087000000fa00000087000000fa00000087000000fa00000087000000fa00000087000000fb00000087000000fb00000087000000fb00000087000000fb00000087000000fb00000051000000510000005100000051000000510000005100000051000000510000005100000051000000510000000c00000006000000060000002700000028000000390000002b000000150000002700000000010000ba0000009b0000009b000000b70000009d000000b7000000b7000000b70000009b000000b70000009d000000b7000000b7000000b70000009b0000009b0000009b00000083000000ba00000000010000ba0000009b0000009b000000b70000009d000000b7000000b7000000b70000009b000000b70000009d000000b7000000b7000000b70000009b0000009b0000009b00000083000000000100002700000006000000270000002700000027000000270000002d0000001000000010000000230000006a000000000100006a000000000100006a000000000100006a000000000100001e0000002c000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000230000006a000000000100006a000000000100006a000000000100006a000000000100001e0000002c000000630000004300000000010000000100004300000000010000430000000001000043000000430000009400000094000000430000009400000043000000940000004300000024000000270000004600000030000000360000002d000000360000001d0000001d0000001d0000001d0000001d0000001d0000001d0000001d00000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad000000000100001b0000001b0000001b0000001b0000001b0000001b0000001b0000001b0000001b0000001b000000000100000001000000010000000100008c00000000010000000100000001000000010000000100000001000000010000000100008c00000000010000000100000001000000010000000100000001000000010000000100008c00000000010000000100000001000000010000000100000001000000010000000100008c000000000100000001000000010000000100004600000046000000460000004900000049000000490000004900000024000000240000002400000024000000220000001800000004000000
+    unwrapper: 
+  assetList:
+  - Assets/Bakery/examples/content/sponza/bush.FBX
+  - Assets/Bakery/examples/content/floor_lamp.FBX
+  - Assets/Models/raspberry/source/raspberry.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Duck_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Squid_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dove_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Pig_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Dolphin_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaOtter_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/SnappingTurtle_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Chick_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Cow_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Chick_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Rabbit_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Pronghorn_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowOwl_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Ostrich_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Crocodile_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Crocodile_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Mouse_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Possum_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Arowana_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Cobra_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Swan_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Zebra_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Squid_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Donkey_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Pigeon_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Buffalo_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Cat_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaOtter_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Sheep_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Reindeer_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Owl_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Donkey_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/SnowOwl_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/GoldenEagle_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Goldfish_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dog_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Buffalo_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hornbill_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Kingfisher_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Hen_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Fox_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Coyote_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/ArcticFox_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaHorse_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Quokka_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Emu_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/RedPanda_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Chick_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Gorilla_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Wolf_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Cheetah_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Rattlesnake_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Sheep_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Quokka_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Cat_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Squid_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/SnappingTurtle_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Snake_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dove_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Orca_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Crab_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Hyena_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/HornedLizard_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Rooster_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Crocodile_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Possum_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Snake_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Dog_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Manatee_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/HornedLizard_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Gazelle_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/ArcticFox_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/SnowWeasel_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Swan_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Wolf_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kangaroo_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Snake_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Snake_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Bighorn_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Cow_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Wolf_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/HornedLizard_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Hen_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/RedPanda_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Ox_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Dolphin_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Fox_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kookaburra_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/Rattlesnake_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Clownfish_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Carp_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Clownfish_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Elephant_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Mouse_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GilaMonster_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GoldenEagle_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Lobster_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Crow_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Possum_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/Camel_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Mouse_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Peacock_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Hog_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kangaroo_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Wombat_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Rooster_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Gorilla_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Koala_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Pelican_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Camel_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowWeasel_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Cheetah_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Bat_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Frog_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Parrot_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Rooster_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Frog_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/TasmanianDevil_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dog_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Carp_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/SeaOtter_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hog_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/SnappingTurtle_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Ox_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Armadillo_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Cheetah_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GoldenEagle_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Gazelle_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Crow_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaHorse_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Sloth_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Rattlesnake_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Hen_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Peacock_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Dove_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/RedPanda_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Duck_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/RedPanda_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Tortoise_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dove_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Gazelle_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hog_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Pronghorn_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Ostrich_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kangaroo_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Pig_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Cheetah_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Sheep_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Possum_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Eagle_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Buffalo_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Mouse_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Parrot_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/PolarBear_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/ArcticFox_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Emu_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Pelican_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowWeasel_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Buffalo_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Tortoise_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Goldfish_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Manatee_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Ostrich_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Donkey_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/RedPanda_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hornbill_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/ArcticFox_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Rabbit_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Zebra_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Swan_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Peacock_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kookaburra_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Lobster_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Tortoise_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/Penguin_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/TasmanianDevil_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tapir_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Orca_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Sloth_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Sloth_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Rabbit_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Crab_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Wolf_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/PolarBear_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Emu_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Gazelle_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Crow_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Peacock_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Cat_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Platypus_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Walrus_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Sloth_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Crow_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Koala_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Fox_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kangaroo_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Pronghorn_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Owl_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Hornbill_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Manatee_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Elephant_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Raccoon_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Pig_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Fox_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Panda_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Elephant_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Fox_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Tiger_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Donkey_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Frog_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Panda_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/Walrus_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Raccoon_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Reindeer_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Cow_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Cow_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/PolarBear_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Flamingo_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Raccoon_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Flamingo_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Beaver_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dog_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hog_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Beaver_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Kookaburra_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tiger_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Flamingo_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowOwl_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Squid_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Ostrich_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Parrot_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Manatee_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Zebra_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Panda_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Cobra_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Rhino_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Pigeon_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Cobra_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/ArcticFox_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Cheetah_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaOtter_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/GilaMonster_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dove_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Lobster_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Flamingo_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Kangaroo_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GoldenEagle_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Rhino_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hyena_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Dog_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Parrot_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaOtter_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Pelican_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Bighorn_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Peacock_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tiger_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Tortoise_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tapir_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Kingfisher_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Donkey_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Rabbit_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/Reindeer_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Crab_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Eagle_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Clownfish_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Koala_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Rattlesnake_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Snake_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Hippo_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Rattlesnake_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Raccoon_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Gazelle_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tiger_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Chick_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hog_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Bat_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/Ox_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Chick_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GilaMonster_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowWeasel_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Goldfish_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Wombat_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Pigeon_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Sheep_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GilaMonster_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SeaLion_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Crab_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Walrus_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowOwl_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Beaver_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Bighorn_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Elephant_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaHorse_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Gorilla_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Platypus_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Owl_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Carp_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tapir_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Possum_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Sloth_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Manatee_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hyena_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Dolphin_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Rhino_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/SeaHorse_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Emu_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowWeasel_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Elephant_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Koala_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Armadillo_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Dolphin_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Sheep_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tapir_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Owl_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hyena_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Flamingo_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Buffalo_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Armadillo_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Swan_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Cow_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Penguin_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Cat_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Coyote_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Platypus_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Frog_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Animations/Tortoise_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Coyote_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Walrus_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hippo_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Beaver_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/TasmanianDevil_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Carp_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Camel_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Cobra_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/TasmanianDevil_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Hen_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Arowana_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Carp_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/HornedLizard_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Quokka_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Panda_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Pelican_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kookaburra_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Cat_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/Coyote_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GoldenEagle_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Ox_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/TasmanianDevil_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Zebra_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Reindeer_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hippo_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Goldfish_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hornbill_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/GilaMonster_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/HornedLizard_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Squid_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Mouse_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Gorilla_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Pig_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Animations/SeaLion_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Bat_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Camel_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Eagle_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Pelican_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Pig_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Arowana_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Pigeon_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Wombat_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Orca_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Goldfish_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SnowOwl_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Animations/Crocodile_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/PolarBear_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Raccoon_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Rhino_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Bat_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/SeaHorse_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Animations/Orca_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Bat_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Bighorn_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Animations/Ostrich_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Dolphin_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Lobster_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Platypus_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Koala_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Clownfish_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Arowana_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Crow_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Crocodile_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Wombat_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Panda_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Penguin_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Clownfish_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/SnappingTurtle_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Rooster_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Parrot_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Cobra_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Models/Tiger_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Kingfisher_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Beaver_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Camel_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Penguin_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Duck_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/PolarBear_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Hornbill_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hippo_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/SnappingTurtle_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Crab_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hyena_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Rooster_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Kingfisher_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Wolf_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/Bighorn_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Reindeer_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Penguin_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SeaLion_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SeaLion_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Owl_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Gorilla_Animations.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Zebra_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Lobster_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/SeaLion_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Wombat_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Duck_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Pigeon_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Armadillo_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Swan_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Pets Vol.1/Models/Rabbit_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Pronghorn_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Hippo_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Animations/Quokka_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Models/Coyote_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Animations/Duck_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/Pronghorn_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Jungle Vol.1/Animations/Tapir_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Arowana_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Animations/Eagle_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Emu_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Kingfisher_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Walrus_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Arctic Vol.1/Models/Ox_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/River Vol.1/Models/Frog_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Kookaburra_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Platypus_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Desert Vol.1/Animations/Armadillo_Animations.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Sea Vol.1/Models/Orca_LOD0.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Forest Vol.1/Models/Eagle_LOD1.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Safari Vol.1/Models/Rhino_LOD2.fbx
+  - Assets/Models/Quirky Series Vol.2 [v1.3]/Island Vol.1/Models/Quokka_LOD3.fbx
+  - Assets/Models/Quirky Series Vol.1 [v1.3]/Farm Vol.1/Models/Hen_LOD2.fbx
+  uvOverlapAssetList: 00000000ffffffff01010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  xatlasWarningShown: 0
+  foundCompatibleSetup: 0
+  gpuName: 
+  runsNonRTX: 1
+  runsOptix5: 1
+  runsOptix6: 1
+  runsOptix7: 1
+  runsOIDN: 1
+  alwaysEnableRTX: 0
+  checkerPreviewOn: 0
+  rtSceneViewPreviewOn: 0
+  renderSettingsBounces: 5
+  renderSettingsGISamples: 16
+  renderSettingsGIBackFaceWeight: 0
+  renderSettingsTileSize: 512
+  renderSettingsPriority: 2
+  renderSettingsTexelsPerUnit: 20
+  renderSettingsForceRefresh: 1
+  renderSettingsForceRebuildGeometry: 1
+  renderSettingsPerformRendering: 1
+  renderSettingsUserRenderMode: 0
+  renderSettingsDistanceShadowmask: 0
+  renderSettingsSettingsMode: 0
+  renderSettingsFixSeams: 1
+  renderSettingsDenoise: 1
+  renderSettingsDenoise2x: 0
+  renderSettingsEncode: 1
+  renderSettingsEncodeMode: 0
+  renderSettingsOverwriteWarning: 0
+  renderSettingsAutoAtlas: 1
+  renderSettingsUnwrapUVs: 1
+  renderSettingsForceDisableUnwrapUVs: 0
+  renderSettingsMaxAutoResolution: 4096
+  renderSettingsMinAutoResolution: 16
+  renderSettingsUnloadScenes: 1
+  renderSettingsAdjustSamples: 1
+  renderSettingsGILODMode: 2
+  renderSettingsGILODModeEnabled: 0
+  renderSettingsCheckOverlaps: 0
+  renderSettingsSkipOutOfBoundsUVs: 1
+  renderSettingsHackEmissiveBoost: 1
+  renderSettingsHackIndirectBoost: 1
+  renderSettingsTempPath: 
+  renderSettingsOutPath: 
+  renderSettingsUseScenePath: 0
+  renderSettingsHackAOIntensity: 0
+  renderSettingsHackAOSamples: 16
+  renderSettingsHackAORadius: 1
+  renderSettingsShowAOSettings: 0
+  renderSettingsShowTasks: 1
+  renderSettingsShowTasks2: 0
+  renderSettingsShowPaths: 1
+  renderSettingsShowNet: 1
+  renderSettingsOcclusionProbes: 0
+  renderSettingsTexelsPerMap: 0
+  renderSettingsTexelsColor: 1
+  renderSettingsTexelsMask: 1
+  renderSettingsTexelsDir: 1
+  renderSettingsShowDirWarning: 1
+  renderSettingsRenderDirMode: 0
+  renderSettingsShowCheckerSettings: 0
+  renderSettingsSamplesWarning: 1
+  renderSettingsPrefabWarning: 1
+  renderSettingsSplitByScene: 0
+  renderSettingsUVPaddingMax: 0
+  renderSettingsPostPacking: 1
+  renderSettingsHoleFilling: 0
+  renderSettingsBeepOnFinish: 0
+  renderSettingsExportTerrainAsHeightmap: 1
+  renderSettingsRTXMode: 0
+  renderSettingsLightProbeMode: 1
+  renderSettingsClientMode: 0
+  renderSettingsServerAddress: 127.0.0.1
+  renderSettingsUnwrapper: 0
+  renderSettingsDenoiserType: 100
+  renderSettingsExportTerrainTrees: 0
+  renderSettingsShowPerf: 1
+  renderSettingsSampleDiv: 1
+  renderSettingsAtlasPacker: 0
+  renderSettingsBatchPoints: 1
+  renderSettingsCompressVolumes: 0
+  renderSettingsRTPVExport: 1
+  renderSettingsRTPVSceneView: 0
+  renderSettingsRTPVWidth: 640
+  renderSettingsRTPVHeight: 360
+  modifiedMeshPaddingArray: 2e000000460000002a000000110000000e0000000c0000000400000033000000330000003300000033000000330000003300000033000000330000000a00000007000000060000002b0000002b00000011000000140000001400000014000000140000002a0000001d000000320000003200000032000000320000002a000000080000000d0000000500000087000000fa00000087000000fa00000087000000fa00000087000000fa00000087000000fb00000087000000fb00000087000000fb00000087000000fb00000087000000fb00000051000000510000005100000051000000510000005100000051000000510000005100000051000000510000000c00000006000000060000002700000028000000390000002b000000150000002700000000010000ba0000009b0000009b000000b70000009d000000b7000000b7000000b70000009b000000b70000009d000000b7000000b7000000b70000009b0000009b0000009b00000083000000ba00000000010000ba0000009b0000009b000000b70000009d000000b7000000b7000000b70000009b000000b70000009d000000b7000000b7000000b70000009b0000009b0000009b00000083000000000100002700000006000000270000002700000027000000270000002d0000001000000010000000230000006a000000000100006a000000000100006a000000000100006a000000000100001e0000002c000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000210000005c000000000100005c000000000100005c000000000100005c000000000100001a00000026000000230000006a000000000100006a000000000100006a000000000100006a000000000100001e0000002c000000630000004300000000010000000100004300000000010000430000000001000043000000430000009400000094000000430000009400000043000000940000004300000024000000270000004600000030000000360000002d000000360000001d0000001d0000001d0000001d0000001d0000001d0000001d0000001d00000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad0000000001000000010000ad000000000100001b0000001b0000001b0000001b0000001b0000001b0000001b0000001b0000001b0000001b000000000100000001000000010000000100008c00000000010000000100000001000000010000000100000001000000010000000100008c00000000010000000100000001000000010000000100000001000000010000000100008c00000000010000000100000001000000010000000100000001000000010000000100008c000000000100000001000000010000000100004600000046000000460000004900000049000000490000004900000024000000240000002400000024000000220000001800000004000000
+  modifiedMeshUnwrapperArray: 
