@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using States;
 using UnityEngine;
@@ -49,6 +50,12 @@ public class EatingState : State
         if (eating) return;
 
         animal.SetAnimState("eat");
+
+        if (animal.animalInfo.foodItWillEat.FirstOrDefault(i => i.food == _food.ReturnFlora())!.isFavorite)
+        {
+            animal.SetAnimState("excited");
+        }
+
         EatFood(Random.Range(5f, 10f));
         eating = true;
     }
@@ -63,6 +70,7 @@ public class EatingState : State
         }
 
         _food.OnEaten();
+        Mathf.Clamp(animal.hunger -= _food.ReturnFlora().fullness,0, 100);
         animal.TransitionToState(new WanderAround());
     }
 
