@@ -11,7 +11,7 @@ public class ContextSolver
    [Title("Debug")] [SerializeField] private bool showGizmos = true;
    private float[] _interestGizmo = Array.Empty<float>();
    private Vector3 _resultDirection = Vector3.zero;
-   //private float _rayLength = 1f;
+   private float _rayLength = 1f;
 
    private void Start()
    {

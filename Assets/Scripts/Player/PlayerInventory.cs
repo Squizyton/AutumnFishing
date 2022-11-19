@@ -42,14 +42,6 @@ namespace Player
             return true;
         }
 
-        
-        public void RemoveFromInventory(Vegetation flora, int amountToRemove)
-        {
-            if (!foragableMaterials.ContainsKey(flora)) return;
-         
-            if (foragableMaterials[flora].amount > 0)
-                foragableMaterials[flora].amount -= amountToRemove;
-        }
 
         public void SwitchTool(int number)
         {

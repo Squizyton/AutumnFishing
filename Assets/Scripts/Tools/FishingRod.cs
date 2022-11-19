@@ -93,10 +93,6 @@ namespace ItemActions
         {
         }
 
-        public override void OnRightClickLetGo()
-        {
-        }
-
 
         private IEnumerator StartChargingCooldown()
         {

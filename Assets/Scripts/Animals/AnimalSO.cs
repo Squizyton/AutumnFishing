@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using ForagableMaterial;
-using Interface;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Animal", menuName = "New Animal Info")]
-public class AnimalSO : ScriptableObject,IPicturable
+public class AnimalSO : ScriptableObject
 {
     public string animalName;
     
@@ -39,10 +38,5 @@ public class AnimalSO : ScriptableObject,IPicturable
         public Vegetation food;
         public bool isFavorite;
         public float weight;
-    }
-
-    public string ReturnName()
-    {
-        return animalName;
     }
 }

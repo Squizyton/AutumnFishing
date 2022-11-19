@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
-using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -27,8 +26,6 @@ public class CameraController : MonoBehaviour
 
     public void Update()
     {
-        if (PlayerMovement.Instance.GetState() == PlayerMovement.State.canNotMove) return;
-        
         ChangeCameraRotation();
     }
     

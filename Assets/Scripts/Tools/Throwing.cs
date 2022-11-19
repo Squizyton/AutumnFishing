@@ -144,10 +144,10 @@ namespace Tools
         
         public override void OnRightClick()
         {
+            throw new System.NotImplementedException();
         }
 
-        public override void OnRightClickLetGo()
-        {
-        }
+       
+
     }
 }

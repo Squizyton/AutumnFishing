@@ -1,10 +1,9 @@
-using Interface;
 using UnityEngine;
 
 namespace ForagableMaterial
 {
     [CreateAssetMenu(menuName = "New Fauna", fileName = "New Fauna")]
-    public class Vegetation : ScriptableObject, IPicturable
+    public class Vegetation : ScriptableObject
     {
         //Material name
         public string materialName;
@@ -14,12 +13,5 @@ namespace ForagableMaterial
         public Sprite sprite;
         //The amount of material that can be gathered
         public int maxStack;
-        
-        //Fullness of the material
-        public float fullness;
-        public string ReturnName()
-        {
-            return materialName;
-        }
     }
 }

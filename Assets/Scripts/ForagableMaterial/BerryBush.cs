@@ -37,6 +37,7 @@ public class BerryBush : PickupableObject
         
         if (PlayerInventory.Instance.AddToInventory(flora))
         {
+            Debug.Log("Berries have been added to the inventory");
             berries.SetActive(false);
             isPicked = true;
             Regrow(duration:respawnTime);
@@ -60,6 +61,7 @@ public class BerryBush : PickupableObject
         // Regrow the berries.
         berries.SetActive(true);
         isPicked = false;
+        Debug.Log("Berries have respawned");
     }
     
     public bool ReturnStatus()

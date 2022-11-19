@@ -8,7 +8,10 @@ using UnityEngine;
 
 public class SeekBehaviour : SteeringBehaviour
 {
-    [Title("Thresholds")] private bool _reachedLastTarget = true;
+    [Title("Thresholds")]
+   
+
+    private bool _reachedLastTarget = true;
 
 
     [Title("Debug Variables")] [SerializeField]
@@ -51,8 +54,8 @@ public class SeekBehaviour : SteeringBehaviour
         {
             Debug.Log("Reached Target");
             _reachedLastTarget = true;
-            //TODO: Not really a todo, however uncomment if needed in future
-            // aiData.currentTarget = null;
+           //TODO: Not really a todo, however uncomment if needed in future
+           // aiData.currentTarget = null;
             return (danger, interest);
         }
 
@@ -61,15 +64,15 @@ public class SeekBehaviour : SteeringBehaviour
         var directionToTarget = (targetPositionCached - _transform.position);
 
         for (var i = 0; i < interest.Length; i++)
-        {
+        { 
             var result = Vector3.Dot(directionToTarget.normalized, Directions.eightDirections[i]);
 
 
             //Accept only directions at the less than 90 degrees from the target direction
             if (!(result > 0)) continue;
 
-            if (result > interest[i])
-                interest[i] = result;
+            if (result > interest[i]) ;
+            interest[i] = result;
         }
 
         interestsTemp = interest;
