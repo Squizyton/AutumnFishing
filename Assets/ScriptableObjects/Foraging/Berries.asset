@@ -16,3 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 3207352518593197028, guid: afcefb586e546a24892a3815b3430585, type: 3}
   sprite: {fileID: 0}
   maxStack: 15
+  fullness: 5
